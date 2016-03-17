@@ -1,0 +1,8 @@
+# IntelliJ
+*.iml
+
+# Go coverage
+*.out
+
+# VIM
+*.swp

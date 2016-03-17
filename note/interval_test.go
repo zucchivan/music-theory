@@ -1,4 +1,4 @@
-// Package note is an opinionated model of a musical note, by Charney Kaye.
+// An interval is the difference between two pitches.
 package note
 
 import (

@@ -1,4 +1,4 @@
-// Package note is an opinionated model of a musical note, by Charney Kaye.
+// A Note is used to represent the relative duration and pitch of a sound.
 package note
 
 import (

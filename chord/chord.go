@@ -1,4 +1,4 @@
-// Package chord is an opinionated model of a musical chord, by Charney Kaye.
+// A chord, in music, is any harmonic set of three or more notes that is heard as if sounding simultaneously.
 package chord
 
 // Copyright 2015 Outright Mental, Inc.

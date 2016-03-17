@@ -1,4 +1,4 @@
-// Package key is an opinionated model of musical signature, by Charney Kaye.
+// The key of a piece is a group of pitches, or scale upon which a music composition is created in classical, Western art, and Western pop music.
 package key
 
 import (

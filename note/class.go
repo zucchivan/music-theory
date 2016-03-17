@@ -1,4 +1,4 @@
-// Package note is an opinionated model of a musical note, by Charney Kaye.
+// In music, a pitch class (p.c. or pc) is a set of all pitches that are a whole number of octaves apart, e.g., the pitch class C consists of the Cs in all octaves.
 package note
 
 // Class of pitch for a note (across all octaves)

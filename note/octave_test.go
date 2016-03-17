@@ -1,4 +1,4 @@
-// Package note is an opinionated model of a musical note, by Charney Kaye.
+// A perfect octave is the interval between one musical pitch and another with half or double its frequency.
 package note
 
 import (

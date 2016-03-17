@@ -12,7 +12,7 @@ import (
 
 // Chord in a particular key
 type Chord struct {
-	Key   key.Key
+	Key key.Key
 }
 
 // In the key to create a Chord

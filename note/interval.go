@@ -22,6 +22,7 @@ var IntervalOrder = []Interval{
 
 // Interval between notes.
 type Interval int
+
 const (
 	I2  = Interval(2)
 	I3  = Interval(3)

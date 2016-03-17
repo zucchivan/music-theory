@@ -3,6 +3,7 @@ package note
 
 // Class of pitch for a note (across all octaves)
 type Class string
+
 const (
 	NONE = Class("-")
 	C    = Class("C")

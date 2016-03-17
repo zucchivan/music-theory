@@ -8,7 +8,7 @@ import (
 	"github.com/go-music/music/interval"
 )
 
-// Of a name to return a Key
+// Of a particular key, e.g. Of("C minor 7")
 func Of(name string) Key {
 	k := Key{}
 	k.parse(name)

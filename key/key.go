@@ -6,6 +6,7 @@ import (
 
 	"github.com/go-music/music/note"
 	"github.com/go-music/music/interval"
+	"regexp"
 )
 
 // Of a particular key, e.g. Of("C minor 7")
@@ -21,8 +22,11 @@ type Key struct {
 	Major bool
 	Minor bool
 	//
-	Tones map[interval.Interval]note.Class
+	Tones Tones
 }
+
+// Tones is a set of pitch classes
+type Tones map[interval.Interval]note.Class
 
 /*
  *
@@ -52,14 +56,14 @@ func (this *Key) parse(name string) {
 
 func (this *Key) parseChunk(chunk string) {
 	chunk = strings.ToLower(chunk)
-	switch chunk {
-	case "major":
+	switch {
+	case rgxKeyMajor.MatchString(chunk):
 		this.Major = true
 		this.Tones[interval.I3], _ = this.Root.Step(4) // major 3rd
-	case "minor":
+	case rgxKeyMinor.MatchString(chunk):
 		this.Minor = true
 		this.Tones[interval.I3], _ = this.Root.Step(3) // minor 3rd
-	case "7":
+	case rgxKeySeventh.MatchString(chunk):
 		if this.Major {
 			this.Tones[interval.I7], _ = this.Root.Step(11) // major 7th
 		} else if this.Minor {
@@ -80,4 +84,20 @@ func (this *Key) parseImplications() {
 	if _, exists := this.Tones[interval.I3]; !exists {
 		this.Tones[interval.I3], _ = this.Root.Step(4)
 	}
+}
+
+/*
+ *
+ private */
+
+var (
+	rgxKeyMajor *regexp.Regexp
+	rgxKeyMinor *regexp.Regexp
+	rgxKeySeventh *regexp.Regexp
+)
+
+func init() {
+	rgxKeyMajor, _ = regexp.Compile("^maj")
+	rgxKeyMinor, _ = regexp.Compile("^min")
+	rgxKeySeventh, _ = regexp.Compile("^7|sev")
 }

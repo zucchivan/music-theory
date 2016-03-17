@@ -2,16 +2,25 @@
 package key
 
 import (
+	"io/ioutil"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"gopkg.in/yaml.v2"
 
 	"github.com/go-music/music/note"
-	"github.com/go-music/music/interval"
 )
 
 func TestKeys(t *testing.T) {
-	for name, expect := range testKeyExpectations {
+	testExpectations := testExpectationManifest{}
+	file, err := ioutil.ReadFile("testdata/expectations.yaml")
+	assert.Nil(t, err)
+
+	err = yaml.Unmarshal(file, &testExpectations)
+	assert.Nil(t, err)
+
+	assert.True(t, len(testExpectations.Keys) > 0)
+	for name, expect := range testExpectations.Keys {
 		k := Of(name)
 		assert.Equal(t, expect.Root, k.Root)
 		for interval, class := range expect.Tones {
@@ -25,89 +34,15 @@ func TestOf_Invalid(t *testing.T) {
 	assert.Equal(t, note.NONE, k.Root)
 }
 
-type testKeyExpect struct {
-	Root note.Class
- 	Tones Tones
+/*
+ *
+ private */
+
+type testKey struct {
+	Root  note.Class
+	Tones Tones
 }
 
-var testKeyExpectations = map[string]testKeyExpect{
-	"C": testKeyExpect{
-		Root: note.C,
-		Tones: Tones{
-			interval.I3: note.E, // major 3rd
-			interval.I5: note.G, // perfect 5th
-		},
-	},
-
-	"C 7": testKeyExpect{
-		Root: note.C,
-		Tones: Tones{
-			interval.I3: note.E, // major 3rd
-			interval.I5: note.G, // perfect 5th
-			interval.I7: note.AS, // minor 7th
-		},
-	},
-
-	"C Seven": testKeyExpect{
-		Root: note.C,
-		Tones: Tones{
-			interval.I3: note.E, // major 3rd
-			interval.I5: note.G, // perfect 5th
-			interval.I7: note.AS, // minor 7th
-		},
-	},
-
-	"C major": testKeyExpect{
-		Root: note.C,
-		Tones: Tones{
-			interval.I3: note.E, // major 3rd
-			interval.I5: note.G, // perfect 5th
-		},
-	},
-
-	"C maj": testKeyExpect{
-		Root: note.C,
-		Tones: Tones{
-			interval.I3: note.E, // major 3rd
-			interval.I5: note.G, // perfect 5th
-		},
-	},
-
-	"C major 7": testKeyExpect{
-		Root: note.C,
-		Tones: Tones{
-			interval.I3: note.E, // major 3rd
-			interval.I5: note.G, // perfect 5th
-			interval.I7: note.B, // major 7th
-		},
-	},
-
-	"C minor": testKeyExpect{
-		Root: note.C,
-		Tones: Tones{
-			interval.I3: note.DS, // minor 3rd
-			interval.I5: note.G, // perfect 5th
-		},
-	},
-
-	"C min": testKeyExpect{
-		Root: note.C,
-		Tones: Tones{
-			interval.I3: note.DS, // minor 3rd
-			interval.I5: note.G, // perfect 5th
-		},
-	},
-
-	"C minor 7": testKeyExpect{
-		Root: note.C,
-		Tones: Tones{
-			interval.I3: note.DS, // minor 3rd
-			interval.I5: note.G, // perfect 5th
-			interval.I7: note.AS, // minor 7th
-		},
-	},
-
-	"XXX": testKeyExpect{
-		Root: note.NONE,
-	},
+type testExpectationManifest struct {
+	Keys map[string]testKey
 }

@@ -26,16 +26,16 @@ Author: [Charney Kaye](http://w.charney.io)
 
 A Note is used to represent the relative duration and pitch of a sound.
 
-https://github.com/go-music/music/note
+[![GoDoc](https://godoc.org/github.com/go-music/music/note?status.svg)](https://godoc.org/github.com/go-music/music/note)
 
 ## Key
 
 The key of a piece is a group of pitches, or scale upon which a music composition is created in classical, Western art, and Western pop music.
 
-https://github.com/go-music/music/key
+[![GoDoc](https://godoc.org/github.com/go-music/music/key?status.svg)](https://godoc.org/github.com/go-music/music/key)
 
 ## Chord
 
 A chord, in music, is any harmonic set of three or more notes that is heard as if sounding simultaneously.
 
-https://github.com/go-music/music/chord
+[![GoDoc](https://godoc.org/github.com/go-music/music/chord?status.svg)](https://godoc.org/github.com/go-music/music/chord)

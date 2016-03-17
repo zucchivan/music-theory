@@ -1,6 +1,20 @@
 // An interval is the difference between two pitches.
 package interval
 
+import (
+	"github.com/go-music/music/note"
+)
+
+func ForAllIn(setIntervals map[Interval]note.Class, callback ClassIteratorFunc) {
+	for _, interval := range Order {
+		if class, isInSet := setIntervals[interval]; isInSet {
+			callback(class)
+		}
+	}
+}
+
+type ClassIteratorFunc func(class note.Class)
+
 // Order of all the intervals, e.g. for stepping from the root of a chord outward to its other tones.
 var Order = []Interval{
 	I2,
@@ -23,6 +37,7 @@ var Order = []Interval{
 // Interval between notes.
 type Interval int
 
+// Interval between notes.
 const (
 	I2  = Interval(2)
 	I3  = Interval(3)

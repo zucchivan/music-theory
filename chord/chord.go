@@ -27,11 +27,9 @@ func In(k key.Key) *Chord {
 // Notes to obtain the notes from the Chord
 func (this *Chord) Notes() (notes []*note.Note) {
 	notes = append(notes, note.OfClass(this.Key.Root))
-	for _, interval := range interval.Order {
-		if val, ok := this.Key.Tones[interval]; ok {
-			notes = append(notes, note.OfClass(val))
-		}
-	}
+	interval.ForAllIn(this.Key.Tones, func(class note.Class) {
+		notes = append(notes, note.OfClass(class))
+	})
 	return
 }
 

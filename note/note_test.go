@@ -15,17 +15,21 @@ func TestNamed(t *testing.T) {
 }
 
 func TestOfClass(t *testing.T) {
-	// TODO
+	n := OfClass(C)
+	assert.Equal(t, n, &Note{
+		Class: C,
+	})
 }
 
 func TestClassNamed(t *testing.T) {
-	// TODO
+	n := ClassNamed("C")
+	assert.Equal(t, n, C)
 }
 
 func TestShiftTime(t *testing.T) {
-	// TODO
-}
-
-func TestFullName(t *testing.T) {
-	// TODO
+	n := Named("C")
+	n.Position = 5
+	n2 := n.ShiftTime(1)
+	assert.NotNil(t, n2)
+	assert.Equal(t, n2.Position, float64(6))
 }

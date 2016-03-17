@@ -33,20 +33,13 @@ func OfClass(class Class) (n *Note) {
 
 // ClassNamed returns a pitch Class
 func ClassNamed(text string) Class {
-	n := &Note{}
-
-	// First the name, including octave shift.
-	n.Class, n.Octave = NameOf(text)
-
-	// Last, add the originally named octave.
-	n.Octave += OctaveOf(text)
-
+	n := Named(text)
 	return n.Class
 }
 
 // ShiftTime to copy the note to another position in time.
 func (from *Note) ShiftTime(t float64) *Note {
 	to := *from
-	from.Position += t
+	to.Position += t
 	return &to
 }

@@ -1,8 +1,8 @@
 // An interval is the difference between two pitches.
-package note
+package interval
 
-// Ordered set of all the intervals, e.g. for stepping from the root of a chord outward to its other tones.
-var IntervalOrder = []Interval{
+// Order of all the intervals, e.g. for stepping from the root of a chord outward to its other tones.
+var Order = []Interval{
 	I2,
 	I3,
 	I4,

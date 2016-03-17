@@ -1,6 +1,6 @@
 # Chord
 
-[![GoDoc](https://godoc.org/github.com/go-music/music/chord?status.svg)](https://godoc.org/github.com/go-music/music/chord)
+[![GoDoc](https://godoc.org/github.com/go-music/music/chord?status.svg)](https://godoc.org/github.com/go-music/music/chord) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music/music/chord)
 
 #### An opinionated model of a musical chord.
 

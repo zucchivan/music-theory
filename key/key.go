@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/go-music/music/note"
+	"github.com/go-music/music/interval"
 )
 
 // Of a name to return a Key
@@ -20,7 +21,7 @@ type Key struct {
 	Major bool
 	Minor bool
 	//
-	Tones map[note.Interval]note.Class
+	Tones map[interval.Interval]note.Class
 }
 
 /*
@@ -28,7 +29,7 @@ type Key struct {
  private */
 
 func (this *Key) parse(name string) {
-	this.Tones = make(map[note.Interval]note.Class)
+	this.Tones = make(map[interval.Interval]note.Class)
 
 	// split key name into chunks
 	chunks := strings.Split(name, " ")
@@ -54,29 +55,29 @@ func (this *Key) parseChunk(chunk string) {
 	switch chunk {
 	case "major":
 		this.Major = true
-		this.Tones[note.I3], _ = this.Root.Step(4) // major 3rd
+		this.Tones[interval.I3], _ = this.Root.Step(4) // major 3rd
 	case "minor":
 		this.Minor = true
-		this.Tones[note.I3], _ = this.Root.Step(3) // minor 3rd
+		this.Tones[interval.I3], _ = this.Root.Step(3) // minor 3rd
 	case "7":
 		if this.Major {
-			this.Tones[note.I7], _ = this.Root.Step(11) // major 7th
+			this.Tones[interval.I7], _ = this.Root.Step(11) // major 7th
 		} else if this.Minor {
-			this.Tones[note.I7], _ = this.Root.Step(10) // minor 7th
+			this.Tones[interval.I7], _ = this.Root.Step(10) // minor 7th
 		} else {
-			this.Tones[note.I7], _ = this.Root.Step(10) // minor 7th
+			this.Tones[interval.I7], _ = this.Root.Step(10) // minor 7th
 		}
 	}
 }
 
 func (this *Key) parseImplications() {
 	// perfect 5th, if none exists
-	if _, exists := this.Tones[note.I5]; !exists {
-		this.Tones[note.I5], _ = this.Root.Step(7)
+	if _, exists := this.Tones[interval.I5]; !exists {
+		this.Tones[interval.I5], _ = this.Root.Step(7)
 	}
 
 	// major 3rd, if none exists
-	if _, exists := this.Tones[note.I3]; !exists {
-		this.Tones[note.I3], _ = this.Root.Step(4)
+	if _, exists := this.Tones[interval.I3]; !exists {
+		this.Tones[interval.I3], _ = this.Root.Step(4)
 	}
 }

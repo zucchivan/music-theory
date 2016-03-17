@@ -8,6 +8,7 @@ import (
 
 	"github.com/go-music/music/key"
 	"github.com/go-music/music/note"
+	"github.com/go-music/music/interval"
 )
 
 // Chord in a particular key
@@ -26,7 +27,7 @@ func In(k key.Key) *Chord {
 // Notes to obtain the notes from the Chord
 func (this *Chord) Notes() (notes []*note.Note) {
 	notes = append(notes, note.OfClass(this.Key.Root))
-	for _, interval := range note.IntervalOrder {
+	for _, interval := range interval.Order {
 		if val, ok := this.Key.Tones[interval]; ok {
 			notes = append(notes, note.OfClass(val))
 		}

@@ -28,6 +28,12 @@ A Note is used to represent the relative duration and pitch of a sound.
 
 [![GoDoc](https://godoc.org/github.com/go-music/music/note?status.svg)](https://godoc.org/github.com/go-music/music/note)
 
+## Interval
+
+An interval is the difference between two pitches.
+
+[![GoDoc](https://godoc.org/github.com/go-music/music/interval?status.svg)](https://godoc.org/github.com/go-music/music/interval)
+
 ## Key
 
 The key of a piece is a group of pitches, or scale upon which a music composition is created in classical, Western art, and Western pop music.

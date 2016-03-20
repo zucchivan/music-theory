@@ -4,7 +4,7 @@
 
 https://github.com/go-music/music
 
-#### Opinionated models of certain atomic musical concepts
+#### Opinionated models of the building blocks of music theory
 
 There's an example command-line utility `music.go` to demo the libraries:
 

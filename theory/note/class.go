@@ -25,7 +25,7 @@ func NameOf(text string) (Class, Octave) {
 	return baseNameOf(text).Step(baseStepOf(text))
 }
 
-// Step from a class to another class, +/- semitones
+// Step from a class to another class, +/- semitones, +/- octave
 func (from Class) Step(inc int) (Class, Octave) {
 	return stepFrom(from, inc)
 }
@@ -35,36 +35,43 @@ func (from Class) Step(inc int) (Class, Octave) {
  private */
 
 func baseNameOf(text string) Class {
-	switch text[0:1] {
-	case "C":
-		return C
-	case "D":
-		return D
-	case "E":
-		return E
-	case "F":
-		return F
-	case "G":
-		return G
-	case "A":
-		return A
-	case "B":
-		return B
-	default:
+	if len(text) > 0 {
+		switch text[0:1] {
+		case "C":
+			return C
+		case "D":
+			return D
+		case "E":
+			return E
+		case "F":
+			return F
+		case "G":
+			return G
+		case "A":
+			return A
+		case "B":
+			return B
+		default:
+			return NONE
+		}
+	} else {
 		return NONE
 	}
 }
 
 func baseStepOf(text string) (inc int) {
-	if len(text) <= 1 {
+	if len(text) < 2 {
 		return 0
 	} else if text[1:2] == "#" { // Sharp e.g. "C#"
 		return 1
-	} else if text[1:2] == "s" { // Sharp e.g. "Cs" or "Csharp"
+	} else if text[1:2] == "s" {
+		// Sharp e.g. "Cs" or "Csharp"
 		return 1
-	} else if text[1:2] == "b" { // Flat e.g. "Cb"
+	} else if text[1:2] == "b" { // Flat e.g. "Db"
 		return -1
 	} else if text[1:2] == "f" { // Flat e.g. "Cf" or "Cflat"
+		return -1
+	} else if len(text) >= 4 && text[1:4] == "♭" { // Flat e.g. "E♭" (special character length=3)
 		return -1
 	} else {
 		return 0

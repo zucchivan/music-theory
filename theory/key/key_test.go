@@ -1,4 +1,4 @@
- // The key of a piece is a group of pitches, or scale upon which a music composition is created in classical, Western art, and Western pop music.
+// The key of a piece is a group of pitches, or scale upon which a music composition is created in classical, Western art, and Western pop music.
 package key
 
 import (
@@ -8,7 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v2"
 
-	"github.com/go-music/music/note"
+	"github.com/go-music/music/theory/note"
+	"fmt"
 )
 
 func TestKeys(t *testing.T) {
@@ -21,11 +22,9 @@ func TestKeys(t *testing.T) {
 
 	assert.True(t, len(testExpectations.Keys) > 0)
 	for name, expect := range testExpectations.Keys {
-		k := Of(name)
-		assert.Equal(t, expect.Root, k.Root)
-		for interval, class := range expect.Tones {
-			assert.Equal(t, class, k.Tones[interval])
-		}
+		actual := Of(name)
+		assert.Equal(t, note.ClassNamed(expect.Root), actual.Root, fmt.Sprintf("name:%v expect.Root:%v actual.Root:%v", name, expect.Root, actual.Root))
+		assert.Equal(t, expect.Mode, actual.Mode, fmt.Sprintf("name:%v expect.Mode:%v actual.Mode:%v", name, expect.Mode, actual.Mode))
 	}
 }
 
@@ -39,8 +38,8 @@ func TestOf_Invalid(t *testing.T) {
  private */
 
 type testKey struct {
-	Root  note.Class
-	Tones Tones
+	Root  string
+	Mode  KeyMode
 }
 
 type testExpectationManifest struct {

@@ -6,11 +6,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/go-music/music/note"
+	"github.com/go-music/music/theory/note"
 )
 
 func TestInterval(t *testing.T) {
-	assert.Equal(t, 15, len(Order))
+	assert.Equal(t, 16, len(Order))
 }
 
 func TestForAllIn(t *testing.T) {

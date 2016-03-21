@@ -28,6 +28,7 @@ func TestNameOf(t *testing.T) {
 	testNameOf(t, "Ab", GS, 0)
 	testNameOf(t, "B", B, 0)
 	testNameOf(t, "B#", C, 1)
+	testNameOf(t, "E♭", DS, 0)
 	testNameOf(t, "Bb", AS, 0)
 	testNameOf(t, "z", NONE, 0)
 	testNameOf(t, "zzzz", NONE, 0)
@@ -38,7 +39,10 @@ func TestNameStep(t *testing.T) {
 }
 
 func Test_baseNameOf(t *testing.T) {
-	//assert.Equal(t, false, true)
+	assert.Equal(t, C, baseNameOf("C# Major"))
+	assert.Equal(t, G, baseNameOf("GbM"))
+	assert.Equal(t, NONE, baseNameOf("XXX"))
+	assert.Equal(t, NONE, baseNameOf(""))
 }
 
 func Test_baseStepOf(t *testing.T) {

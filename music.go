@@ -1,19 +1,29 @@
 // Opinionated models of the building blocks of music theory
 //
-// The command-line utility `music.go` will demo the Music libraries:
+// There's an example command-line utility `music.go` to demo the libraries, with some helpful wrappers to run it from the command line.
 //
-//     go run music.go -k "C minor 7"
+// To build a chord, use `bin/chord`:
+//
+//     $ bin/chord Cm nondominant -5 679
 //
 // This will output:
 //
 //     root: C
-//     major: false
-//     minor: true
 //     tones:
-//       3: D#
-//       5: G
-//       7: A#
+//     3: D#
+//     6: A
+//     7: A#
+//     9: D
 //
+// Use use `bin/key` to build a key:
+//
+//     $ bin/key G#m
+//     root: G#
+//     mode: Minor
+//
+// Author:  Charney Kaye
+// Website:  http://w.charney.io
+
 package main
 
 import (

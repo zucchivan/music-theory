@@ -20,10 +20,12 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strings"
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/go-music/music/key"
+	"github.com/go-music/music/theory/key"
+	"github.com/go-music/music/theory/chord"
 )
 
 func init() {
@@ -37,8 +39,17 @@ func main() {
 		fmt.Printf("%+v", string(yaml[:]))
 	}
 
-	os.Exit(0)
+	if len(opt.Chord) > 0 {
+		var out []byte
+		if strings.TrimSpace(opt.Chord) == "?" {
+			out, _ = yaml.Marshal(chord.ListAllForms())
+		} else {
+			out, _ = yaml.Marshal(chord.Of(opt.Chord))
+		}
+		fmt.Printf("%+v", string(out[:]))
+	}
 
+	os.Exit(0)
 }
 
 var (
@@ -47,9 +58,11 @@ var (
 
 type Options struct {
 	Key string
+	Chord string
 }
 
 func (o *Options) Parse() {
 	flag.StringVar(&o.Key, "k", "", "Key")
+	flag.StringVar(&o.Chord, "c", "", "Chord")
 	flag.Parse()
 }

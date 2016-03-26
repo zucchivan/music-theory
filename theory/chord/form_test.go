@@ -9,8 +9,13 @@ import (
 	"github.com/go-music/music/theory/interval"
 )
 
-func TestFormMatchString(t *testing.T) {
+func TestListAllForms(t *testing.T) {
+	l := ListAllForms()
+	assert.Equal(t, len(forms), len(l))
+}
 
+func TestFormMatchString(t *testing.T) {
+	// TODO
 }
 
 func TestChordParseForms(t *testing.T) {

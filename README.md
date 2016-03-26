@@ -1,8 +1,8 @@
 # Music 
 
-[![Build Status](https://travis-ci.org/go-music/music.svg?branch=master)](https://travis-ci.org/go-music/music) [![GoDoc](https://godoc.org/github.com/go-music/music?status.svg)](https://godoc.org/github.com/go-music/music) [![Go Report Card](https://goreportcard.com/badge/github.com/go-music/music)](https://goreportcard.com/report/github.com/go-music/music)
+[![Build Status](https://travis-ci.org/go-music/music.svg?branch=master)](https://travis-ci.org/go-music/music) [![GoDoc](https://godoc.org/gopkg.in/music.v0?status.svg)](https://godoc.org/gopkg.in/music.v0) [![Go Report Card](https://goreportcard.com/badge/gopkg.in/music.v0)](https://goreportcard.com/report/gopkg.in/music.v0)
 
-https://github.com/go-music/music
+https://gopkg.in/music.v0
 
 #### Opinionated models of the building blocks of music theory
 
@@ -33,22 +33,22 @@ Author: [Charney Kaye](http://w.charney.io)
 
 A Note is used to represent the relative duration and pitch of a sound.
 
-[![GoDoc](https://godoc.org/github.com/go-music/music/theory/note?status.svg)](https://godoc.org/github.com/go-music/music/theory/note) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music/music/theory/note)
+[![GoDoc](https://godoc.org/gopkg.in/music.v0/theory/note?status.svg)](https://godoc.org/gopkg.in/music.v0/theory/note) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/gopkg.in/music.v0/theory/note)
 
 ## Interval
 
 An interval is the difference between two pitches.
 
-[![GoDoc](https://godoc.org/github.com/go-music/music/theory/interval?status.svg)](https://godoc.org/github.com/go-music/music/theory/interval) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music/music/theory/interval)
+[![GoDoc](https://godoc.org/gopkg.in/music.v0/theory/interval?status.svg)](https://godoc.org/gopkg.in/music.v0/theory/interval) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/gopkg.in/music.v0/theory/interval)
 
 ## Key
 
 The key of a piece is a group of pitches, or scale upon which a music composition is created in classical, Western art, and Western pop music.
 
-[![GoDoc](https://godoc.org/github.com/go-music/music/theory/key?status.svg)](https://godoc.org/github.com/go-music/music/theory/key) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music/music/theory/key)
+[![GoDoc](https://godoc.org/gopkg.in/music.v0/theory/key?status.svg)](https://godoc.org/gopkg.in/music.v0/theory/key) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/gopkg.in/music.v0/theory/key)
 
 ## Chord
 
 A chord, in music, is any harmonic set of three or more notes that is heard as if sounding simultaneously.
 
-[![GoDoc](https://godoc.org/github.com/go-music/music/theory/chord?status.svg)](https://godoc.org/github.com/go-music/music/theory/chord) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music/music/theory/chord)
+[![GoDoc](https://godoc.org/gopkg.in/music.v0/theory/chord?status.svg)](https://godoc.org/gopkg.in/music.v0/theory/chord) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/gopkg.in/music.v0/theory/chord)

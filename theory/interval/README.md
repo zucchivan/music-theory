@@ -1,6 +1,6 @@
 # Interval
 
-[![GoDoc](https://godoc.org/github.com/go-music/music/theory/interval?status.svg)](https://godoc.org/github.com/go-music/music/theory/interval) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music/music/theory/interval) 
+[![GoDoc](https://godoc.org/gopkg.in/music.v0/theory/interval?status.svg)](https://godoc.org/gopkg.in/music.v0/theory/interval) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/gopkg.in/music.v0/theory/interval) 
 
 #### An opinionated model of a musical interval.
 

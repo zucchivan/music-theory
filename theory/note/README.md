@@ -1,6 +1,6 @@
 # Note
 
-[![GoDoc](https://godoc.org/github.com/go-music/music/theory/note?status.svg)](https://godoc.org/github.com/go-music/music/theory/note) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music/music/theory/note)
+[![GoDoc](https://godoc.org/gopkg.in/music.v0/theory/note?status.svg)](https://godoc.org/gopkg.in/music.v0/theory/note) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/gopkg.in/music.v0/theory/note)
 
 #### An opinionated model of a musical note.
 

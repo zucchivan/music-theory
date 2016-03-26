@@ -2,7 +2,7 @@
 package interval
 
 import (
-	"github.com/go-music/music/theory/note"
+	"gopkg.in/music.v0/theory/note"
 )
 
 func ForAllIn(setIntervals map[Interval]note.Class, callback ClassIteratorFunc) {

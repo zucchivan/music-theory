@@ -5,7 +5,7 @@ import (
 	//"log"
 	"regexp"
 
-	"github.com/go-music/music/theory/interval"
+	"gopkg.in/music.v0/theory/interval"
 )
 
 // ListAllForms to list the names of all known chord forms

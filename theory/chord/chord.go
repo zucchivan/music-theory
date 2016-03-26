@@ -2,8 +2,8 @@
 package chord
 
 import (
-	"github.com/go-music/music/theory/interval"
-	"github.com/go-music/music/theory/note"
+	"gopkg.in/music.v0/theory/interval"
+	"gopkg.in/music.v0/theory/note"
 )
 
 // Chord in a particular key

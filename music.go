@@ -34,8 +34,8 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/go-music/music/theory/key"
-	"github.com/go-music/music/theory/chord"
+	"gopkg.in/music.v0/theory/key"
+	"gopkg.in/music.v0/theory/chord"
 )
 
 func init() {

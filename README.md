@@ -4,7 +4,7 @@
 
 https://github.com/go-music/music
 
-#### Opinionated models of the building blocks of music theory
+#### Music theory models in Go
 
 There's an example command-line utility `music.go` to demo the libraries, with some helpful wrappers to run it from the command line.
 

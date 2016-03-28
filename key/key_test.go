@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v2"
 
-	"github.com/go-music/music/theory/note"
+	"github.com/go-music-theory/music-theory/note"
 	"fmt"
 )
 

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/go-music/music/theory/note"
+	"github.com/go-music-theory/music-theory/note"
 )
 
 func TestInterval(t *testing.T) {

@@ -2,7 +2,7 @@
 package chord
 
 import (
-	"github.com/go-music/music/theory/note"
+	"github.com/go-music-theory/music-theory/note"
 )
 
 // Chord in a particular key

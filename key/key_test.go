@@ -30,7 +30,7 @@ func TestKeys(t *testing.T) {
 
 func TestOf_Invalid(t *testing.T) {
 	k := Of("P-funk")
-	assert.Equal(t, note.NONE, k.Root)
+	assert.Equal(t, note.Nil, k.Root)
 }
 
 /*

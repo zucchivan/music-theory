@@ -20,9 +20,9 @@ func TestFormMatchString(t *testing.T) {
 func TestChordParseForms(t *testing.T) {
 	c := Of("Cm nondominant -5 +6 +7 +9")
 	assert.Equal(t, map[Interval]note.Class{
-		I3: note.DS,
+		I3: note.Ds,
 		I6: note.A,
-		I7: note.AS,
+		I7: note.As,
 		I9: note.D,
 	}, c.Tones)
 }

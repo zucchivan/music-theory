@@ -9,29 +9,29 @@ import (
 
 func TestNameOf(t *testing.T) {
 	testNameOf(t, "C", C, 0)
-	testNameOf(t, "C#", CS, 0)
+	testNameOf(t, "C#", Cs, 0)
 	testNameOf(t, "Cb", B, -1)
 	testNameOf(t, "D", D, 0)
-	testNameOf(t, "Dsharp", DS, 0)
-	testNameOf(t, "Dflat", CS, 0)
+	testNameOf(t, "Dsharp", Ds, 0)
+	testNameOf(t, "Dflat", Cs, 0)
 	testNameOf(t, "E", E, 0)
 	testNameOf(t, "Esh", F, 0)
-	testNameOf(t, "Efl", DS, 0)
+	testNameOf(t, "Efl", Ds, 0)
 	testNameOf(t, "F", F, 0)
-	testNameOf(t, "Fs", FS, 0)
+	testNameOf(t, "Fs", Fs, 0)
 	testNameOf(t, "Ff", E, 0)
 	testNameOf(t, "G", G, 0)
-	testNameOf(t, "G#", GS, 0)
-	testNameOf(t, "Gb", FS, 0)
+	testNameOf(t, "G#", Gs, 0)
+	testNameOf(t, "Gb", Fs, 0)
 	testNameOf(t, "A", A, 0)
-	testNameOf(t, "A#", AS, 0)
-	testNameOf(t, "Ab", GS, 0)
+	testNameOf(t, "A#", As, 0)
+	testNameOf(t, "Ab", Gs, 0)
 	testNameOf(t, "B", B, 0)
 	testNameOf(t, "B#", C, 1)
-	testNameOf(t, "E♭", DS, 0)
-	testNameOf(t, "Bb", AS, 0)
-	testNameOf(t, "z", NONE, 0)
-	testNameOf(t, "zzzz", NONE, 0)
+	testNameOf(t, "E♭", Ds, 0)
+	testNameOf(t, "Bb", As, 0)
+	testNameOf(t, "z", Nil, 0)
+	testNameOf(t, "zzzz", Nil, 0)
 }
 
 func TestNameStep(t *testing.T) {
@@ -41,8 +41,8 @@ func TestNameStep(t *testing.T) {
 func Test_baseNameOf(t *testing.T) {
 	assert.Equal(t, C, baseNameOf("C# Major"))
 	assert.Equal(t, G, baseNameOf("GbM"))
-	assert.Equal(t, NONE, baseNameOf("XXX"))
-	assert.Equal(t, NONE, baseNameOf(""))
+	assert.Equal(t, Nil, baseNameOf("XXX"))
+	assert.Equal(t, Nil, baseNameOf(""))
 }
 
 func Test_baseStepOf(t *testing.T) {

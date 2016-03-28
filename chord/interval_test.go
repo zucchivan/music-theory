@@ -15,9 +15,9 @@ func TestInterval(t *testing.T) {
 
 func TestForAllIn(t *testing.T) {
 	tones := map[Interval]note.Class{
-		I2: note.DS,
+		I2: note.Ds,
 		I5: note.G,
-		I7: note.AS,
+		I7: note.As,
 	}
 	ForAllIn(tones, func(class note.Class) {
 		assert.NotEmpty(t, class)

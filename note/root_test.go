@@ -10,9 +10,9 @@ import (
 func TestRootOf(t *testing.T) {
 	assertRootAndRemaining(t, "C", C, "")
 	assertRootAndRemaining(t, "Cmaj", C, "maj")
-	assertRootAndRemaining(t, "B♭min", AS, "min")
-	assertRootAndRemaining(t, "C#dim", CS, "dim")
-	assertRootAndRemaining(t, "JAMS", NONE, "JAMS")
+	assertRootAndRemaining(t, "B♭min", As, "min")
+	assertRootAndRemaining(t, "C#dim", Cs, "dim")
+	assertRootAndRemaining(t, "JAMS", Nil, "JAMS")
 }
 
 /*

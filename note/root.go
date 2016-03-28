@@ -24,7 +24,7 @@ func RootAndRemaining(name string) (root Class, nameWithoutRoot string) {
 		root = ClassNamed(r)
 		nameWithoutRoot = strings.TrimSpace(name[len(r):])
 	} else {
-		root = NONE
+		root = Nil
 		nameWithoutRoot = name
 	}
 	return

@@ -24,7 +24,7 @@ func TestChordExpectations(t *testing.T) {
 	assert.True(t, len(testExpectations.Chords) > 0)
 	for name, expect := range testExpectations.Chords {
 		actual := Of(name)
-		assert.Equal(t, expect.Root, actual.Root, fmt.Sprintf("name:%v expect.Root:%v actual.Root:%v", name, expect.Root, actual.Root))
+		assert.Equal(t, note.ClassNamed(expect.Root), actual.Root, fmt.Sprintf("name:%v expect.Root:%v actual.Root:%v", name, note.ClassNamed(expect.Root), actual.Root))
 		for i, c := range expect.Tones {
 			assert.Equal(t, note.ClassNamed(c), actual.Tones[i], fmt.Sprintf("name:%v expect.Tones[%v]:%v actual.Tones[%v]:%v", name, i, c, i, actual.Tones[i]))
 		}
@@ -37,16 +37,16 @@ func TestChordExpectations(t *testing.T) {
 func TestNotes(t *testing.T) {
 	c := Of("Cm nondominant -5 +6 +7 +9")
 	assert.Equal(t, []*note.Note{
-		&note.Note{Class: note.DS},
+		&note.Note{Class: note.Ds},
 		&note.Note{Class: note.A},
-		&note.Note{Class: note.AS},
+		&note.Note{Class: note.As},
 		&note.Note{Class: note.D},
 	}, c.Notes())
 }
 
 func TestOf_Invalid(t *testing.T) {
 	k := key.Of("P-funk")
-	assert.Equal(t, note.NONE, k.Root)
+	assert.Equal(t, note.Nil, k.Root)
 }
 
 /*
@@ -54,7 +54,7 @@ func TestOf_Invalid(t *testing.T) {
  private */
 
 type testKey struct {
-	Root  note.Class
+	Root  string
 	Tones map[Interval]string
 }
 

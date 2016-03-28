@@ -2,22 +2,22 @@
 package note
 
 // Class of pitch for a note (across all octaves)
-type Class string
+type Class int
 
 const (
-	NONE Class = "-"
-	C    Class = "C"
-	CS   Class = "C#"
-	D    Class = "D"
-	DS   Class = "D#"
-	E    Class = "E"
-	F    Class = "F"
-	FS   Class = "F#"
-	G    Class = "G"
-	GS   Class = "G#"
-	A    Class = "A"
-	AS   Class = "A#"
-	B    Class = "B"
+	Nil Class = iota
+	C
+	Cs
+	D
+	Ds
+	E
+	F
+	Fs
+	G
+	Gs
+	A
+	As
+	B
 )
 
 // NameOf a note will return its Class and Octave
@@ -52,10 +52,10 @@ func baseNameOf(text string) Class {
 		case "B":
 			return B
 		default:
-			return NONE
+			return Nil
 		}
 	} else {
-		return NONE
+		return Nil
 	}
 }
 
@@ -103,33 +103,33 @@ type step struct {
 
 var (
 	stepUp = map[Class]step{
-		NONE: step{NONE, 0},
-		C:    step{CS, 0},
-		CS:   step{D, 0},
-		D:    step{DS, 0},
-		DS:   step{E, 0},
+		Nil: step{Nil, 0},
+		C:    step{Cs, 0},
+		Cs:   step{D, 0},
+		D:    step{Ds, 0},
+		Ds:   step{E, 0},
 		E:    step{F, 0},
-		F:    step{FS, 0},
-		FS:   step{G, 0},
-		G:    step{GS, 0},
-		GS:   step{A, 0},
-		A:    step{AS, 0},
-		AS:   step{B, 0},
+		F:    step{Fs, 0},
+		Fs:   step{G, 0},
+		G:    step{Gs, 0},
+		Gs:   step{A, 0},
+		A:    step{As, 0},
+		As:   step{B, 0},
 		B:    step{C, 1},
 	}
 	stepDown = map[Class]step{
-		NONE: step{NONE, 0},
+		Nil: step{Nil, 0},
 		C:    step{B, -1},
-		CS:   step{C, 0},
-		D:    step{CS, 0},
-		DS:   step{D, 0},
-		E:    step{DS, 0},
+		Cs:   step{C, 0},
+		D:    step{Cs, 0},
+		Ds:   step{D, 0},
+		E:    step{Ds, 0},
 		F:    step{E, 0},
-		FS:   step{F, 0},
-		G:    step{FS, 0},
-		GS:   step{G, 0},
-		A:    step{GS, 0},
-		AS:   step{A, 0},
-		B:    step{AS, 0},
+		Fs:   step{F, 0},
+		G:    step{Fs, 0},
+		Gs:   step{G, 0},
+		A:    step{Gs, 0},
+		As:   step{A, 0},
+		B:    step{As, 0},
 	}
 )

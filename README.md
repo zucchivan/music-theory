@@ -4,15 +4,17 @@
 
 https://github.com/go-music/music
 
+Author: [Charney Kaye](http://w.charney.io)
+
 #### Music theory models in Go
 
-There's an example command-line utility `music.go` to demo the libraries, with some helpful wrappers to run it from the command line.
+There's an example command-line utility `music.go` to demo the libraries, with `bin/` wrappers for different functions, as follows.
 
-To build a chord, use `bin/chord`:
+##### Chords
+
+To build a chord, run `bin/chord` followed by the name of the chord, e.g.:
 
     $ bin/chord Cm nondominant -5 679
-    
-This will output:
     
     root: C
     tones:
@@ -20,14 +22,61 @@ This will output:
       6: A
       7: A#
       9: D
+
+To list the names of all the known chord-building rules, run `bin/chord ?`:
+
+    $ bin/chord ?
+    
+    - Basic
+    - Nondominant
+    - Major Triad
+    - Minor Triad
+    - Augmented Triad
+    - Diminished Triad
+    - Suspended Triad
+    - Omit Fifth
+    - Flat Fifth
+    - Add Sixth
+    - Augmented Sixth
+    - Omit Sixth
+    - Add Seventh
+    - Dominant Seventh
+    - Major Seventh
+    - Minor Seventh
+    - Diminished Seventh
+    - Half Diminished Seventh
+    - Diminished Major Seventh
+    - Augmented Major Seventh
+    - Augmented Minor Seventh
+    - Harmonic Seventh
+    - Omit Seventh
+    - Add Ninth
+    - Dominant Ninth
+    - Major Ninth
+    - Minor Ninth
+    - Sharp Ninth
+    - Omit Ninth
+    - Add Eleventh
+    - Dominant Eleventh
+    - Major Eleventh
+    - Minor Eleventh
+    - Omit Eleventh
+    - Add Thirteenth
+    - Dominant Thirteenth
+    - Major Thirteenth
+    - Minor Thirteenth
+
+##### Scales
+
+*coming soon!*
+
+##### Keys
       
-Use use `bin/key` to build a key:
+To build a key, use `bin/key` followed by the name of the key, e.g.:
 
     $ bin/key G#m
     root: G#
     mode: Minor
-
-Author: [Charney Kaye](http://w.charney.io)
 
 ## Note
 

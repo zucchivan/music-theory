@@ -6,3 +6,6 @@
 
 # VIM
 *.swp
+
+# Targets
+/target/

@@ -9,7 +9,6 @@ import (
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v2"
 
-	"github.com/go-music/music/theory/interval"
 	"github.com/go-music/music/theory/key"
 	"github.com/go-music/music/theory/note"
 )
@@ -26,11 +25,11 @@ func TestChordExpectations(t *testing.T) {
 	for name, expect := range testExpectations.Chords {
 		actual := Of(name)
 		assert.Equal(t, expect.Root, actual.Root, fmt.Sprintf("name:%v expect.Root:%v actual.Root:%v", name, expect.Root, actual.Root))
-		for interval, class := range expect.Tones {
-			assert.Equal(t, note.ClassNamed(class), actual.Tones[interval], fmt.Sprintf("name:%v expect.Tones[%v]:%v actual.Tones[%v]:%v", name, interval, class, interval, actual.Tones[interval]))
+		for i, c := range expect.Tones {
+			assert.Equal(t, note.ClassNamed(c), actual.Tones[i], fmt.Sprintf("name:%v expect.Tones[%v]:%v actual.Tones[%v]:%v", name, i, c, i, actual.Tones[i]))
 		}
-		for interval, class := range actual.Tones {
-			assert.Equal(t, note.ClassNamed(expect.Tones[interval]), class, fmt.Sprintf("name:%v actual.Tones[%v]:%v expect.Tones[%v]:%v", name, interval, class, interval, expect.Tones[interval]))
+		for i, c := range actual.Tones {
+			assert.Equal(t, note.ClassNamed(expect.Tones[i]), c, fmt.Sprintf("name:%v actual.Tones[%v]:%v expect.Tones[%v]:%v", name, i, c, i, expect.Tones[i]))
 		}
 	}
 }
@@ -56,7 +55,7 @@ func TestOf_Invalid(t *testing.T) {
 
 type testKey struct {
 	Root  note.Class
-	Tones map[interval.Interval]string
+	Tones map[Interval]string
 }
 
 type testExpectationManifest struct {

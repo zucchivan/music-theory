@@ -1,4 +1,4 @@
-# Music 
+# Music Theory
 
 [![Build Status](https://travis-ci.org/go-music/music.svg?branch=master)](https://travis-ci.org/go-music/music) [![GoDoc](https://godoc.org/github.com/go-music/music?status.svg)](https://godoc.org/github.com/go-music/music) [![Go Report Card](https://goreportcard.com/badge/github.com/go-music/music)](https://goreportcard.com/report/github.com/go-music/music) [![codebeat badge](https://codebeat.co/badges/f5c88d18-fff5-4bc6-affb-cdc55488f429)](https://codebeat.co/projects/github-com-go-music-music)
 

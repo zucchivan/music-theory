@@ -16,16 +16,14 @@ var (
 )
 
 // Parse all forms using Regexp's against a string
-func RootAndRemaining(name string) (root Class, nameWithoutRoot string) {
+func RootAndRemaining(name string) (Class, string) {
 	if r := rgxDouble.FindString(name); len(r) > 0 {
-		root = ClassNamed(r)
-		nameWithoutRoot = strings.TrimSpace(name[len(r):])
-	} else if r := rgxSingle.FindString(name); len(r) > 0 {
-		root = ClassNamed(r)
-		nameWithoutRoot = strings.TrimSpace(name[len(r):])
-	} else {
-		root = Nil
-		nameWithoutRoot = name
+		return ClassNamed(r), strings.TrimSpace(name[len(r):])
 	}
-	return
+
+	if r := rgxSingle.FindString(name); len(r) > 0 {
+		return ClassNamed(r), strings.TrimSpace(name[len(r):])
+	}
+
+	return Nil, name
 }

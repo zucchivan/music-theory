@@ -20,14 +20,14 @@ type Key struct {
 	Mode KeyMode
 }
 
+// KeyMode is the mode of a key, e.g. Major or Minor
 type KeyMode string
-
 const (
-	MajorKeyMode = KeyMode("Major")
-	MinorKeyMode = KeyMode("Minor")
+	MajorKeyMode KeyMode = "Major"
+	MinorKeyMode KeyMode = "Minor"
 )
 
-// Tones is a set of pitch classes
+// Tones are a set of pitch classes
 type Tones map[interval.Interval]note.Class
 
 /*

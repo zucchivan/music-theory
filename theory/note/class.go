@@ -3,21 +3,20 @@ package note
 
 // Class of pitch for a note (across all octaves)
 type Class string
-
 const (
-	NONE = Class("-")
-	C    = Class("C")
-	CS   = Class("C#")
-	D    = Class("D")
-	DS   = Class("D#")
-	E    = Class("E")
-	F    = Class("F")
-	FS   = Class("F#")
-	G    = Class("G")
-	GS   = Class("G#")
-	A    = Class("A")
-	AS   = Class("A#")
-	B    = Class("B")
+	NONE Class = "-"
+	C    Class = "C"
+	CS   Class = "C#"
+	D    Class = "D"
+	DS   Class = "D#"
+	E    Class = "E"
+	F    Class = "F"
+	FS   Class = "F#"
+	G    Class = "G"
+	GS   Class = "G#"
+	A    Class = "A"
+	AS   Class = "A#"
+	B    Class = "B"
 )
 
 // NameOf a note will return its Class and Octave

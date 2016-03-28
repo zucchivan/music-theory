@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/go-music/music.svg?branch=master)](https://travis-ci.org/go-music/music) [![GoDoc](https://godoc.org/github.com/go-music/music?status.svg)](https://godoc.org/github.com/go-music/music) [![Go Report Card](https://goreportcard.com/badge/github.com/go-music/music)](https://goreportcard.com/report/github.com/go-music/music) [![codebeat badge](https://codebeat.co/badges/f5c88d18-fff5-4bc6-affb-cdc55488f429)](https://codebeat.co/projects/github-com-go-music-music)
+[![Build Status](https://travis-ci.org/go-music-theory/music-theory.svg?branch=master)](https://travis-ci.org/go-music-theory/music-theory) [![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory) [![Go Report Card](https://goreportcard.com/badge/github.com/go-music-theory/music-theory)](https://goreportcard.com/report/github.com/go-music-theory/music-theory) [![codebeat badge](https://codebeat.co/badges/f5c88d18-fff5-4bc6-affb-cdc55488f429)](https://codebeat.co/projects/github-com-go-music-music)
 
 # Music Theory
 
-https://github.com/go-music/music
+https://github.com/go-music-theory/music-theory
 
 Author: [Charney Kaye](http://w.charney.io)
 
@@ -79,16 +79,16 @@ To determine a key:
 
 A Note is used to represent the relative duration and pitch of a sound.
 
-[![GoDoc](https://godoc.org/github.com/go-music/music/theory/note?status.svg)](https://godoc.org/github.com/go-music/music/theory/note) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music/music/theory/note)
+[![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory/note?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory/note) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music-theory/music-theory/note)
 
 ## Key
 
 The key of a piece is a group of pitches, or scale upon which a music composition is created in classical, Western art, and Western pop music.
 
-[![GoDoc](https://godoc.org/github.com/go-music/music/theory/key?status.svg)](https://godoc.org/github.com/go-music/music/theory/key) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music/music/theory/key)
+[![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory/key?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory/key) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music-theory/music-theory/key)
 
 ## Chord
 
 A chord, in music, is any harmonic set of three or more notes that is heard as if sounding simultaneously.
 
-[![GoDoc](https://godoc.org/github.com/go-music/music/theory/chord?status.svg)](https://godoc.org/github.com/go-music/music/theory/chord) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music/music/theory/chord)
+[![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory/chord?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory/chord) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music-theory/music-theory/chord)

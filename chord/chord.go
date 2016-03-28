@@ -21,7 +21,7 @@ func Of(name string) Chord {
 
 // Notes to obtain the notes from the Chord
 func (this *Chord) Notes() (notes []*note.Note) {
-	ForAllIn(this.Tones, func(class note.Class) {
+	forAllIn(this.Tones, func(class note.Class) {
 		notes = append(notes, note.OfClass(class))
 	})
 	return

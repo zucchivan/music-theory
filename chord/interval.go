@@ -5,19 +5,7 @@ import (
 	"github.com/go-music-theory/music-theory/note"
 )
 
-// ForAllIn the intervals 1-16 of a chord, run the given function.
-func ForAllIn(setIntervals map[Interval]note.Class, callback ClassIteratorFunc) {
-	for _, i := range Order {
-		if class, isInSet := setIntervals[i]; isInSet {
-			callback(class)
-		}
-	}
-}
-
-// ClassIteratorFunc is run on a note class. See `ForAllIn`
-type ClassIteratorFunc func(class note.Class)
-
-// Interval between notes.
+// Interval within a chord, counted from 1 (the "root" to e.g. 3 (the "third") or 5 (the "fifth") up to 16.
 type Interval int
 
 const (
@@ -58,3 +46,20 @@ var Order = []Interval{
 	I15,
 	I16,
 }
+
+/*
+ *
+ private */
+
+// forAllIn the intervals 1-16 of a chord, run the given function.
+func forAllIn(setIntervals map[Interval]note.Class, callback classIteratorFunc) {
+	for _, i := range Order {
+		if class, isInSet := setIntervals[i]; isInSet {
+			callback(class)
+		}
+	}
+}
+
+// classIteratorFunc is run on a note class. See `ForAllIn`
+type classIteratorFunc func(class note.Class)
+

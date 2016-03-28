@@ -19,7 +19,7 @@ func TestForAllIn(t *testing.T) {
 		I5: note.G,
 		I7: note.As,
 	}
-	ForAllIn(tones, func(class note.Class) {
+	forAllIn(tones, func(class note.Class) {
 		assert.NotEmpty(t, class)
 	})
 }

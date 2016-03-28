@@ -2,7 +2,7 @@
 package chord
 
 import (
-	"github.com/go-music/music/theory/note"
+	"github.com/go-music-theory/music-theory/note"
 )
 
 func ForAllIn(setIntervals map[Interval]note.Class, callback ClassIteratorFunc) {
@@ -17,6 +17,7 @@ type ClassIteratorFunc func(class note.Class)
 
 // Interval between notes.
 type Interval int
+
 const (
 	I1  Interval = 1
 	I2  Interval = 2
@@ -55,4 +56,3 @@ var Order = []Interval{
 	I15,
 	I16,
 }
-

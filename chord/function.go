@@ -2,6 +2,7 @@
 package chord
 
 type Function int
+
 const (
 	GenericFunction Function = iota
 

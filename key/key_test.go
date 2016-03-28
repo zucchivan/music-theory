@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/yaml.v2"
 
-	"github.com/go-music/music/theory/note"
 	"fmt"
+	"github.com/go-music-theory/music-theory/note"
 )
 
 func TestKeys(t *testing.T) {
@@ -38,8 +38,8 @@ func TestOf_Invalid(t *testing.T) {
  private */
 
 type testKey struct {
-	Root  string
-	Mode  KeyMode
+	Root string
+	Mode KeyMode
 }
 
 type testExpectationManifest struct {

@@ -2,13 +2,13 @@
 package chord
 
 import (
-	"github.com/go-music/music/theory/note"
+	"github.com/go-music-theory/music-theory/note"
 )
 
 // Chord in a particular key
 type Chord struct {
-	Root       note.Class
-	Tones      map[Interval]note.Class
+	Root  note.Class
+	Tones map[Interval]note.Class
 }
 
 // Of a particular key, e.g. Of("C minor 7")

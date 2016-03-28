@@ -92,7 +92,7 @@ func main() {
 
 	app.Name = "music-theory"
 	app.Usage = "Notes, Keys, Chords and Scales"
-	app.Version = "0.0.1"
+	app.Version = "0.0.2"
 	app.Authors = []cli.Author{cli.Author{Name: "Charney Kaye", Email: "hiya@charney.io"}}
 	app.Commands = []cli.Command{
 

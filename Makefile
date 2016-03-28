@@ -23,7 +23,7 @@ fmt:
 test: deps
 	go test ./...
 
-$(APPS): deps
+$(APPS): deps test
 	@echo "# Building $@"
 	$(GOBUILD) \
 		-ldflags "$(LDFLAGS)" \

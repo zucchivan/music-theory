@@ -22,10 +22,10 @@ type Form struct {
 	omit FormOmit
 }
 
-// FormIntervalSet maps an interval-from-chord-root to a +/1 semitone adjustment
+// FormAdd maps an interval-from-chord-root to a +/1 semitone adjustment
 type FormAdd map[Interval]int
 
-// FormIntervalOmit maps an interval-from-chord-root to omit
+// FormOmit maps an interval-from-chord-root to omit
 type FormOmit []Interval
 
 // MatchString processes the positive/negative regular expressions to determine if this form matches a string.
@@ -591,7 +591,7 @@ func (this *Form) matchPosNegString(s string) bool {
 
 // Build the chord by processing all Forms against the given name.
 func (this *Chord) parseForms(name string) {
-	toDelete := make([]Interval, 0)
+	var toDelete []Interval
 	for _, f := range forms {
 		if f.MatchString(name) {
 			for i, c := range f.add {

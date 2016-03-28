@@ -39,7 +39,7 @@ func TestOf_Invalid(t *testing.T) {
 
 type testKey struct {
 	Root string
-	Mode KeyMode
+	Mode Mode
 }
 
 type testExpectationManifest struct {

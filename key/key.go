@@ -16,15 +16,15 @@ func Of(name string) Key {
 // Key is a model of a musical key signature
 type Key struct {
 	Root note.Class
-	Mode KeyMode
+	Mode Mode
 }
 
-// KeyMode is the mode of a key, e.g. Major or Minor
-type KeyMode string
+// Mode is the mode of a key, e.g. Major or Minor
+type Mode string
 
 const (
-	MajorKeyMode KeyMode = "Major"
-	MinorKeyMode KeyMode = "Minor"
+	MajorKeyMode Mode = "Major"
+	MinorKeyMode Mode = "Minor"
 )
 
 /*

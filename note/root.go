@@ -12,7 +12,7 @@ import (
 
 var (
 	rgxSingle, _ = regexp.Compile("^[ABCDEFG]")
-	rgxDouble, _ = regexp.Compile("^[ABCDEFG][#♭b]")
+	rgxDouble, _ = regexp.Compile("^[ABCDEFG][♯#♭b]")
 )
 
 // Parse all forms using Regexp's against a string

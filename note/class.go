@@ -30,6 +30,57 @@ func (from Class) Step(inc int) (Class, Octave) {
 	return stepFrom(from, inc)
 }
 
+// String of the note, expressed with Sharps or Flats
+func (from Class) String(as AdjSymbol) string {
+	switch from {
+	case C:
+		return "C"
+	case D:
+		return "D"
+	case E:
+		return "E"
+	case F:
+		return "F"
+	case G:
+		return "G"
+	case A:
+		return "A"
+	case B:
+		return "B"
+	}
+
+	switch as {
+	case Sharp:
+		switch from {
+		case Cs:
+			return "C#"
+		case Ds:
+			return "D#"
+		case Fs:
+			return "F#"
+		case Gs:
+			return "G#"
+		case As:
+			return "A#"
+		}
+	case Flat:
+		switch from {
+		case Cs:
+			return "Db"
+		case Ds:
+			return "Eb"
+		case Fs:
+			return "Gb"
+		case Gs:
+			return "Ab"
+		case As:
+			return "Bb"
+		}
+	}
+
+	return "-"
+}
+
 /*
  *
  private */
@@ -59,7 +110,7 @@ func baseNameOf(text string) Class {
 	}
 }
 
-func baseStepOf(text string) (inc int) {
+func baseStepOf(text string) int {
 	if len(text) < 2 {
 		return 0
 	} else if text[1:2] == "#" { // Sharp e.g. "C#"
@@ -71,11 +122,15 @@ func baseStepOf(text string) (inc int) {
 		return -1
 	} else if text[1:2] == "f" { // Flat e.g. "Cf" or "Cflat"
 		return -1
-	} else if len(text) >= 4 && text[1:4] == "♭" { // Flat e.g. "E♭" (special character length=3)
-		return -1
-	} else {
-		return 0
+	} else if len(text) >= 4 {
+		// Special characters have string length=3
+		if text[1:4] == "♭" {
+			return -1 // Flat e.g. "E♭"
+		} else if text[1:4] == "♯" {
+			return 1 // Sharp e.g. "A♯"
+		}
 	}
+	return 0
 }
 
 func stepFrom(name Class, inc int) (Class, Octave) {

@@ -6,12 +6,22 @@ import (
 	"testing"
 )
 
-func TestSpec(t *testing.T) {
+func TestMusicTheory(t *testing.T) {
 	oldArgs := os.Args
 	defer func() { os.Args = oldArgs }()
 
 	os.Args = []string{"cmd",
-		"-k", "G minor 7",
+		"chord", "G minor 7",
+	}
+	main()
+}
+
+func TestHelpCmd(t *testing.T) {
+	oldArgs := os.Args
+	defer func() { os.Args = oldArgs }()
+
+	os.Args = []string{"cmd",
+		"-h",
 	}
 	main()
 }

@@ -7,8 +7,9 @@ import (
 
 // Chord in a particular key
 type Chord struct {
-	Root  note.Class
-	Tones map[Interval]note.Class
+	Root      note.Class
+	AdjSymbol note.AdjSymbol
+	Tones     map[Interval]note.Class
 }
 
 // Of a particular key, e.g. Of("C minor 7")
@@ -32,6 +33,9 @@ func (this *Chord) Notes() (notes []*note.Note) {
 
 func (this *Chord) parse(name string) {
 	this.Tones = make(map[Interval]note.Class)
+
+	// determine whether the name is "sharps" or "flats"
+	this.AdjSymbol = note.AdjSymbolOf(name)
 
 	// parse the root, and keep the remaining string
 	this.Root, name = note.RootAndRemaining(name)

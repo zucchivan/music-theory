@@ -2,15 +2,15 @@
 package chord
 
 import (
-	"fmt"
-	"io/ioutil"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"gopkg.in/yaml.v2"
 
 	"github.com/go-music-theory/music-theory/key"
 	"github.com/go-music-theory/music-theory/note"
+	"io/ioutil"
+	"gopkg.in/yaml.v2"
+	"fmt"
 )
 
 func TestChordExpectations(t *testing.T) {
@@ -24,12 +24,12 @@ func TestChordExpectations(t *testing.T) {
 	assert.True(t, len(testExpectations.Chords) > 0)
 	for name, expect := range testExpectations.Chords {
 		actual := Of(name)
-		assert.Equal(t, note.ClassNamed(expect.Root), actual.Root, fmt.Sprintf("name:%v expect.Root:%v actual.Root:%v", name, note.ClassNamed(expect.Root), actual.Root))
+		assert.Equal(t, expect.Root, actual.Root.String(actual.AdjSymbol), fmt.Sprintf("name:%v expect.Root:%v actual.Root:%v", name, expect.Root, actual.Root.String(actual.AdjSymbol)))
 		for i, c := range expect.Tones {
-			assert.Equal(t, note.ClassNamed(c), actual.Tones[i], fmt.Sprintf("name:%v expect.Tones[%v]:%v actual.Tones[%v]:%v", name, i, c, i, actual.Tones[i]))
+			assert.Equal(t, c, actual.Tones[i].String(actual.AdjSymbol), fmt.Sprintf("name:%v expect.Tones[%v]:%v actual.Tones[%v]:%v", name, i, c, i, actual.Tones[i].String(actual.AdjSymbol)))
 		}
 		for i, c := range actual.Tones {
-			assert.Equal(t, note.ClassNamed(expect.Tones[i]), c, fmt.Sprintf("name:%v actual.Tones[%v]:%v expect.Tones[%v]:%v", name, i, c, i, expect.Tones[i]))
+			assert.Equal(t, expect.Tones[i], c.String(actual.AdjSymbol), fmt.Sprintf("name:%v actual.Tones[%v]:%v expect.Tones[%v]:%v", name, i, c.String(actual.AdjSymbol), i, expect.Tones[i]))
 		}
 	}
 }

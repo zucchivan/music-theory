@@ -17,6 +17,7 @@ type ClassIteratorFunc func(class note.Class)
 
 // Interval between notes.
 type Interval int
+
 const (
 	I1  Interval = 1
 	I2  Interval = 2
@@ -55,4 +56,3 @@ var Order = []Interval{
 	I15,
 	I16,
 }
-

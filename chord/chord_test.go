@@ -37,10 +37,10 @@ func TestChordExpectations(t *testing.T) {
 func TestNotes(t *testing.T) {
 	c := Of("Cm nondominant -5 +6 +7 +9")
 	assert.Equal(t, []*note.Note{
-		&note.Note{Class:note.DS},
-		&note.Note{Class:note.A},
-		&note.Note{Class:note.AS},
-		&note.Note{Class:note.D},
+		&note.Note{Class: note.DS},
+		&note.Note{Class: note.A},
+		&note.Note{Class: note.AS},
+		&note.Note{Class: note.D},
 	}, c.Notes())
 }
 

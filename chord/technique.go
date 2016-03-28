@@ -2,6 +2,7 @@
 package chord
 
 type Technique int
+
 const (
 	GenericTechnique Technique = iota
 

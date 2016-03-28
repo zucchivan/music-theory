@@ -4,8 +4,8 @@ package chord
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
 	"github.com/go-music-theory/music-theory/note"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestListAllForms(t *testing.T) {

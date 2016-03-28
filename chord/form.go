@@ -4,7 +4,6 @@ package chord
 import (
 	//"log"
 	"regexp"
-
 )
 
 // ListAllForms to list the names of all known chord forms
@@ -76,7 +75,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Nondominant",
-		pos: exp(nondominantExp),
+		pos:  exp(nondominantExp),
 		omit: FormOmit{
 			I1, // no root
 		},
@@ -86,7 +85,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Major Triad",
-		pos: exp("^"+majorExp+"([^a-z]|$)"),
+		pos:  exp("^" + majorExp + "([^a-z]|$)"),
 		add: FormAdd{
 			I3: 4, // major 3rd
 			I5: 7, // perfect 5th
@@ -95,7 +94,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Minor Triad",
-		pos: exp("^"+minorExp+"([^a-z]|$)"),
+		pos:  exp("^" + minorExp + "([^a-z]|$)"),
 		add: FormAdd{
 			I3: 3, // minor 3rd
 			I5: 7, // perfect 5th
@@ -104,7 +103,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Augmented Triad",
-		pos: exp("^"+augmentedExp),
+		pos:  exp("^" + augmentedExp),
 		add: FormAdd{
 			I3: 4, // major 3rd
 			I5: 8, // augmented 5th
@@ -113,7 +112,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Diminished Triad",
-		pos: exp("^"+diminishedExp),
+		pos:  exp("^" + diminishedExp),
 		add: FormAdd{
 			I3: 3, // diminished (minor) 3rd
 			I5: 6, // diminished 5th
@@ -122,7 +121,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Suspended Triad",
-		pos: exp("^"+suspendedExp),
+		pos:  exp("^" + suspendedExp),
 		add: FormAdd{
 			I4: 5, // 4th
 			I5: 7, // perfect 5th
@@ -136,7 +135,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Omit Fifth",
-		pos: exp(omitExp+nExp+"5"),
+		pos:  exp(omitExp + nExp + "5"),
 		omit: FormOmit{
 			I5, // no fifth
 		},
@@ -144,7 +143,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Flat Fifth",
-		pos: exp(flatExp+nExp+"5"),
+		pos:  exp(flatExp + nExp + "5"),
 		add: FormAdd{
 			I5: 6, // flat 5th
 		},
@@ -154,7 +153,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Add Sixth",
-		pos: exp("6"),
+		pos:  exp("6"),
 		add: FormAdd{
 			I6: 9, // 6th
 		},
@@ -162,7 +161,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Augmented Sixth",
-		pos: exp(augmentedExp+nExp+"6"),
+		pos:  exp(augmentedExp + nExp + "6"),
 		add: FormAdd{
 			I6: 10, // augmented 6th
 		},
@@ -170,7 +169,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Omit Sixth",
-		pos: exp(omitExp+nExp+"6"),
+		pos:  exp(omitExp + nExp + "6"),
 		omit: FormOmit{I6},
 	},
 
@@ -178,7 +177,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Add Seventh",
-		pos: exp("7"),
+		pos:  exp("7"),
 		add: FormAdd{
 			I7: 10, // dominant 7th
 		},
@@ -186,7 +185,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Dominant Seventh",
-		pos: exp(dominantExp+nExp+"7"),
+		pos:  exp(dominantExp + nExp + "7"),
 		add: FormAdd{
 			I7: 10, // dominant 7th
 		},
@@ -194,7 +193,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Major Seventh",
-		pos: exp(majorExp+nExp+"7"),
+		pos:  exp(majorExp + nExp + "7"),
 		add: FormAdd{
 			I7: 11, // major 7th
 		},
@@ -202,7 +201,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Minor Seventh",
-		pos: exp(minorExp+nExp+"7"),
+		pos:  exp(minorExp + nExp + "7"),
 		add: FormAdd{
 			I7: 10, // minor 7th
 		},
@@ -211,7 +210,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Diminished Seventh",
-		pos: exp(diminishedExp+nExp+"7"),
+		pos:  exp(diminishedExp + nExp + "7"),
 		add: FormAdd{
 			I7: 9, // diminished 7th
 		},
@@ -219,42 +218,42 @@ var forms = []Form{
 
 	Form{
 		Name: "Half Diminished Seventh",
-		pos: exp(halfExp+nExp+diminishedExp+nExp+"7"),
+		pos:  exp(halfExp + nExp + diminishedExp + nExp + "7"),
 		add: FormAdd{
-			I3: 3, // minor 3rd
-			I5: 6, // diminished 5th
+			I3: 3,  // minor 3rd
+			I5: 6,  // diminished 5th
 			I7: 10, // minor 7th
 		},
 	},
 
 	Form{
 		Name: "Diminished Major Seventh",
-		pos: exp(diminishedExp+nExp+majorExp+nExp+"7"),
-		add: FormAdd{
-			// TODO
+		pos:  exp(diminishedExp + nExp + majorExp + nExp + "7"),
+		add:  FormAdd{
+		// TODO
 		},
 	},
 
 	Form{
 		Name: "Augmented Major Seventh",
-		pos: exp(augmentedExp+nExp+majorExp+nExp+"7"),
-		add: FormAdd{
-			// TODO
+		pos:  exp(augmentedExp + nExp + majorExp + nExp + "7"),
+		add:  FormAdd{
+		// TODO
 		},
 	},
 
 	Form{
 		Name: "Augmented Minor Seventh",
-		pos: exp(augmentedExp+nExp+minorExp+nExp+"7"),
-		add: FormAdd{
-			// TODO
+		pos:  exp(augmentedExp + nExp + minorExp + nExp + "7"),
+		add:  FormAdd{
+		// TODO
 		},
 		omit: FormOmit{},
 	},
 
 	Form{
 		Name: "Harmonic Seventh",
-		pos: exp(harmonicExp+nExp+"7"),
+		pos:  exp(harmonicExp + nExp + "7"),
 		add: FormAdd{
 			I3: 4, // major 3rd
 			I5: 7, // perfect 5th
@@ -263,7 +262,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Omit Seventh",
-		pos: exp(omitExp+nExp+"7"),
+		pos:  exp(omitExp + nExp + "7"),
 		omit: FormOmit{
 			I7, // no 7th
 		},
@@ -273,7 +272,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Add Ninth",
-		pos: exp("9"),
+		pos:  exp("9"),
 		add: FormAdd{
 			I9: 14, // 9th
 		},
@@ -281,7 +280,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Dominant Ninth",
-		pos: exp(dominantExp+nExp+"9"),
+		pos:  exp(dominantExp + nExp + "9"),
 		add: FormAdd{
 			I7: 10, // minor 7th
 			I9: 14, // dominant 9th
@@ -290,7 +289,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Major Ninth",
-		pos: exp(majorExp+nExp+"9"),
+		pos:  exp(majorExp + nExp + "9"),
 		add: FormAdd{
 			I7: 11, // major 7th
 			I9: 14, // dominant 9th
@@ -299,7 +298,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Minor Ninth",
-		pos: exp(minorExp+nExp+"9"),
+		pos:  exp(minorExp + nExp + "9"),
 		add: FormAdd{
 			I7: 10, // minor 7th
 			I9: 14, // dominant 9th
@@ -308,7 +307,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Sharp Ninth",
-		pos: exp(sharpExp+nExp+"9"),
+		pos:  exp(sharpExp + nExp + "9"),
 		add: FormAdd{
 			I9: 15, // sharp 9th
 		},
@@ -316,7 +315,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Omit Ninth",
-		pos: exp(omitExp+nExp+"9"),
+		pos:  exp(omitExp + nExp + "9"),
 		omit: FormOmit{
 			I9, // no 9th
 		},
@@ -326,7 +325,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Add Eleventh",
-		pos: exp("11"),
+		pos:  exp("11"),
 		add: FormAdd{
 			I11: 17, // 11th
 		},
@@ -334,10 +333,10 @@ var forms = []Form{
 
 	Form{
 		Name: "Dominant Eleventh",
-		pos: exp(dominantExp+nExp+"11"),
+		pos:  exp(dominantExp + nExp + "11"),
 		add: FormAdd{
-			I7: 10, // minor 7th
-			I9: 14, // dominant 9th
+			I7:  10, // minor 7th
+			I9:  14, // dominant 9th
 			I11: 17, // dominant 11th
 		},
 		omit: FormOmit{
@@ -347,28 +346,28 @@ var forms = []Form{
 
 	Form{
 		Name: "Major Eleventh",
-		pos: exp(majorExp+nExp+"11"),
+		pos:  exp(majorExp + nExp + "11"),
 		add: FormAdd{
-			I7: 11, // major 7th
-			I9: 14, // dominant 9th
+			I7:  11, // major 7th
+			I9:  14, // dominant 9th
 			I11: 17, // dominant 11th
 		},
 	},
 
 	Form{
 		Name: "Minor Eleventh",
-		pos: exp(minorExp+nExp+"11"),
+		pos:  exp(minorExp + nExp + "11"),
 		add: FormAdd{
-			I3: 3, // minor 3rd
-			I7: 10, // minor 7th
-			I9: 14, // dominant 9th
+			I3:  3,  // minor 3rd
+			I7:  10, // minor 7th
+			I9:  14, // dominant 9th
 			I11: 17, // dominant 11th
 		},
 	},
 
 	Form{
 		Name: "Omit Eleventh",
-		pos: exp(omitExp+nExp+"11"),
+		pos:  exp(omitExp + nExp + "11"),
 		omit: FormOmit{
 			I11,
 		},
@@ -378,7 +377,7 @@ var forms = []Form{
 
 	Form{
 		Name: "Add Thirteenth",
-		pos: exp("13"),
+		pos:  exp("13"),
 		add: FormAdd{
 			I13: 21, // dominant 13th
 		},
@@ -386,10 +385,10 @@ var forms = []Form{
 
 	Form{
 		Name: "Dominant Thirteenth",
-		pos: exp(dominantExp+nExp+"13"),
+		pos:  exp(dominantExp + nExp + "13"),
 		add: FormAdd{
-			I7: 10, // minor 7th
-			I9: 14, // dominant 9th
+			I7:  10, // minor 7th
+			I9:  14, // dominant 9th
 			I11: 17, // dominant 11th
 			I13: 21, // dominant 13th
 		},
@@ -400,11 +399,11 @@ var forms = []Form{
 
 	Form{
 		Name: "Major Thirteenth",
-		pos: exp(majorExp+nExp+"13"),
+		pos:  exp(majorExp + nExp + "13"),
 		add: FormAdd{
-			I3: 4, // major 3rd
-			I7: 11, // major 7th
-			I9: 14, // dominant 9th
+			I3:  4,  // major 3rd
+			I7:  11, // major 7th
+			I9:  14, // dominant 9th
 			I11: 17, // dominant 11th
 			I13: 21, // dominant 13th
 		},
@@ -412,11 +411,11 @@ var forms = []Form{
 
 	Form{
 		Name: "Minor Thirteenth",
-		pos: exp(minorExp+nExp+"13"),
+		pos:  exp(minorExp + nExp + "13"),
 		add: FormAdd{
-			I3: 3, // minor 3rd
-			I7: 10, // minor 7th
-			I9: 14, // dominant 9th
+			I3:  3,  // minor 3rd
+			I7:  10, // minor 7th
+			I9:  14, // dominant 9th
 			I11: 17, // dominant 11th
 			I13: 21, // dominant 13th
 		},
@@ -425,148 +424,148 @@ var forms = []Form{
 	// Lydian
 
 	/*
-	Form{
-		Name: "Lydian",
-		pos: exp("lyd"),
-		// TODO
-	},
+		Form{
+			Name: "Lydian",
+			pos: exp("lyd"),
+			// TODO
+		},
 
-	Form{
-		Name: "Omit Lydian",
-		pos: exp(omitExp+nExp+"lyd"),
-		// TODO
-	},
+		Form{
+			Name: "Omit Lydian",
+			pos: exp(omitExp+nExp+"lyd"),
+			// TODO
+		},
 	*/
 
 	// Specific
 
-/*	Form{
-		Name: "AlphaSpecific",
-		pos: exp("alpha"),
-		// TODO
-	},
+	/*	Form{
+			Name: "AlphaSpecific",
+			pos: exp("alpha"),
+			// TODO
+		},
 
-	Form{
-		Name: "BridgeSpecific",
-		pos: exp("bridge"),
-		// TODO
-	},
+		Form{
+			Name: "BridgeSpecific",
+			pos: exp("bridge"),
+			// TODO
+		},
 
-	Form{
-		Name: "ComplexeSonoreSpecific",
-		pos: exp("(complexe|sonore)"),
-		// TODO
-	},
+		Form{
+			Name: "ComplexeSonoreSpecific",
+			pos: exp("(complexe|sonore)"),
+			// TODO
+		},
 
-	Form{
-		Name: "DreamSpecific",
-		pos: exp("dream"),
-		// TODO
-	},
+		Form{
+			Name: "DreamSpecific",
+			pos: exp("dream"),
+			// TODO
+		},
 
-	Form{
-		Name: "ElektraSpecific",
-		pos: exp("elektra"),
-		// TODO
-	},
+		Form{
+			Name: "ElektraSpecific",
+			pos: exp("elektra"),
+			// TODO
+		},
 
-	Form{
-		Name: "FarbenSpecific",
-		pos: exp("farben"),
-		// TODO
-	},
+		Form{
+			Name: "FarbenSpecific",
+			pos: exp("farben"),
+			// TODO
+		},
 
-	Form{
-		Name: "GrandmotherSpecific",
-		pos: exp("grandmother"),
-		// TODO
-	},
+		Form{
+			Name: "GrandmotherSpecific",
+			pos: exp("grandmother"),
+			// TODO
+		},
 
-	Form{
-		Name: "MagicSpecific",
-		pos: exp("magic"),
-		// TODO
-	},
+		Form{
+			Name: "MagicSpecific",
+			pos: exp("magic"),
+			// TODO
+		},
 
-	Form{
-		Name: "MµSpecific",
-		pos: exp("µ"),
-		// TODO
-	},
+		Form{
+			Name: "MµSpecific",
+			pos: exp("µ"),
+			// TODO
+		},
 
-	Form{
-		Name: "MysticSpecific",
-		pos: exp("mystic"),
-		// TODO
-	},
+		Form{
+			Name: "MysticSpecific",
+			pos: exp("mystic"),
+			// TODO
+		},
 
-	Form{
-		Name: "NorthernLightsSpecific",
-		pos: exp("northern" + nExp + "light"),
-		// TODO
-	},
+		Form{
+			Name: "NorthernLightsSpecific",
+			pos: exp("northern" + nExp + "light"),
+			// TODO
+		},
 
-	Form{
-		Name: "PetrushkaSpecific",
-		pos: exp("petrush"),
-		// TODO
-	},
+		Form{
+			Name: "PetrushkaSpecific",
+			pos: exp("petrush"),
+			// TODO
+		},
 
-	Form{
-		Name: "PsalmsSpecific",
-		pos: exp("psalm"),
-		// TODO
-	},
+		Form{
+			Name: "PsalmsSpecific",
+			pos: exp("psalm"),
+			// TODO
+		},
 
-	Form{
-		Name: "SoWhatSpecific",
-		pos: exp("so" + nExp + "what"),
-		// TODO
-	},
+		Form{
+			Name: "SoWhatSpecific",
+			pos: exp("so" + nExp + "what"),
+			// TODO
+		},
 
-	Form{
-		Name: "TristanSpecific",
-		pos: exp("tristan"),
-		// TODO
-	},
+		Form{
+			Name: "TristanSpecific",
+			pos: exp("tristan"),
+			// TODO
+		},
 
-	Form{
-		Name: "VienneseTrichordSpecific",
-		pos: exp("viennese" + nExp + "trichord"),
-		// TODO
-	},
+		Form{
+			Name: "VienneseTrichordSpecific",
+			pos: exp("viennese" + nExp + "trichord"),
+			// TODO
+		},
 
-	// General
+		// General
 
-	Form{
-		Name: "MixedIntervalGeneral",
-		pos: exp("mixed" + nExp + "interval"),
-		// TODO
-	},
+		Form{
+			Name: "MixedIntervalGeneral",
+			pos: exp("mixed" + nExp + "interval"),
+			// TODO
+		},
 
-	Form{
-		Name: "SecundalGeneral",
-		pos: exp("secundal"),
-		// TODO
-	},
+		Form{
+			Name: "SecundalGeneral",
+			pos: exp("secundal"),
+			// TODO
+		},
 
-	Form{
-		Name: "TertianGeneral",
-		pos: exp("tertian"),
-		// TODO
-	},
+		Form{
+			Name: "TertianGeneral",
+			pos: exp("tertian"),
+			// TODO
+		},
 
-	Form{
-		Name: "QuartalGeneral",
-		pos: exp("quartal"),
-		// TODO
-	},
+		Form{
+			Name: "QuartalGeneral",
+			pos: exp("quartal"),
+			// TODO
+		},
 
-	Form{
-		Name: "SyntheticChordGeneral",
-		pos: exp("synthetic"),
-		// TODO
-	},*/
+		Form{
+			Name: "SyntheticChordGeneral",
+			pos: exp("synthetic"),
+			// TODO
+		},*/
 
 }
 

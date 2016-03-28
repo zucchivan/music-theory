@@ -15,12 +15,13 @@ func Of(name string) Key {
 
 // Key is a model of a musical key signature
 type Key struct {
-	Root  note.Class
+	Root note.Class
 	Mode KeyMode
 }
 
 // KeyMode is the mode of a key, e.g. Major or Minor
 type KeyMode string
+
 const (
 	MajorKeyMode KeyMode = "Major"
 	MinorKeyMode KeyMode = "Minor"
@@ -45,14 +46,13 @@ func (this *Key) parse(name string) {
 	}
 }
 
-
 /*
  *
  private */
 
 var (
-	rgxKeyMajor   *regexp.Regexp
-	rgxKeyMinor   *regexp.Regexp
+	rgxKeyMajor *regexp.Regexp
+	rgxKeyMinor *regexp.Regexp
 )
 
 func init() {

@@ -8,30 +8,30 @@ import (
 )
 
 func TestNameOf(t *testing.T) {
-	testNameOf(t, "C", C, 0)
-	testNameOf(t, "C#", Cs, 0)
-	testNameOf(t, "Cb", B, -1)
-	testNameOf(t, "D", D, 0)
-	testNameOf(t, "Dsharp", Ds, 0)
-	testNameOf(t, "Dflat", Cs, 0)
-	testNameOf(t, "E", E, 0)
-	testNameOf(t, "Esh", F, 0)
-	testNameOf(t, "Efl", Ds, 0)
-	testNameOf(t, "F", F, 0)
-	testNameOf(t, "Fs", Fs, 0)
-	testNameOf(t, "Ff", E, 0)
-	testNameOf(t, "G", G, 0)
-	testNameOf(t, "G#", Gs, 0)
-	testNameOf(t, "Gb", Fs, 0)
-	testNameOf(t, "A", A, 0)
-	testNameOf(t, "A#", As, 0)
-	testNameOf(t, "Ab", Gs, 0)
-	testNameOf(t, "B", B, 0)
-	testNameOf(t, "B#", C, 1)
-	testNameOf(t, "E♭", Ds, 0)
-	testNameOf(t, "Bb", As, 0)
-	testNameOf(t, "z", Nil, 0)
-	testNameOf(t, "zzzz", Nil, 0)
+	testNameOf(t, "C", C, 0, "C", "C")
+	testNameOf(t, "C#", Cs, 0, "C#", "Db")
+	testNameOf(t, "Cb", B, -1, "B", "B")
+	testNameOf(t, "D", D, 0, "D", "D")
+	testNameOf(t, "Dsharp", Ds, 0, "D#", "Eb")
+	testNameOf(t, "Dflat", Cs, 0, "C#", "Db")
+	testNameOf(t, "E", E, 0, "E", "E")
+	testNameOf(t, "Esh", F, 0, "F", "F")
+	testNameOf(t, "Efl", Ds, 0, "D#", "Eb")
+	testNameOf(t, "F", F, 0, "F", "F")
+	testNameOf(t, "Fs", Fs, 0, "F#", "Gb")
+	testNameOf(t, "Ff", E, 0, "E", "E")
+	testNameOf(t, "G", G, 0, "G", "G")
+	testNameOf(t, "G♯", Gs, 0, "G#", "Ab")
+	testNameOf(t, "Gb", Fs, 0, "F#", "Gb")
+	testNameOf(t, "A", A, 0, "A", "A")
+	testNameOf(t, "A#", As, 0, "A#", "Bb")
+	testNameOf(t, "Ab", Gs, 0, "G#", "Ab")
+	testNameOf(t, "B", B, 0, "B", "B")
+	testNameOf(t, "B#", C, 1, "C", "C")
+	testNameOf(t, "E♭", Ds, 0, "D#", "Eb")
+	testNameOf(t, "Bb", As, 0, "A#", "Bb")
+	testNameOf(t, "z", Nil, 0, "-", "-")
+	testNameOf(t, "zzzz", Nil, 0, "-", "-")
 }
 
 func TestNameStep(t *testing.T) {
@@ -57,8 +57,10 @@ func Test_stepFrom(t *testing.T) {
  *
  private */
 
-func testNameOf(t *testing.T, name string, expectClass Class, expectOctave Octave) {
-	n, o := NameOf(name)
+func testNameOf(t *testing.T, name string, expectClass Class, expectOctave Octave, expectStringSharp string, expectStringFlat string) {
+	c, o := NameOf(name)
 	assert.Equal(t, expectOctave, o)
-	assert.Equal(t, expectClass, n)
+	assert.Equal(t, expectClass, c)
+	assert.Equal(t, expectStringSharp, c.String(Sharp))
+	assert.Equal(t, expectStringFlat, c.String(Flat))
 }

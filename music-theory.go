@@ -104,9 +104,7 @@ func main() {
 			Action: func(c *cli.Context) {
 				name := c.Args().First()
 				if len(name) > 0 {
-
-					out, _ := yaml.Marshal(chord.Of(name))
-					fmt.Printf("%s", string(out[:]))
+					fmt.Printf("%s", chord.Of(name).ToYAML())
 				} else {
 					// no arguments
 					cli.ShowCommandHelp(c, "chord")

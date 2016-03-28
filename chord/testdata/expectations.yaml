@@ -73,14 +73,14 @@ chords:
     tones:
       1: C
       3: E
-      5: Ab
+      5: G#
 
   C dim:
     root: C
     tones:
       1: C
-      3: Eb
-      5: Gb
+      3: D#
+      5: F#
 
   C sus:
     root: C
@@ -111,15 +111,15 @@ chords:
       1: C
       3: E
       5: G
-      7: Bb
+      7: A#
 
   C dominant 7 flat 5:
     root: C
     tones:
       1: C
       3: E
-      5: Gb
-      7: Bb
+      5: F#
+      7: A#
 
   Cdom7♭5:
     root: C
@@ -133,48 +133,48 @@ chords:
     root: C
     tones:
       1: C
-      3: Eb
-      5: Gb
+      3: D#
+      5: F#
       7: A
 
   Cdim7:
     root: C
     tones:
       1: C
-      3: Eb
-      5: Gb
+      3: D#
+      5: F#
       7: A
 
   C half diminished 7:
     root: C
     tones:
       1: C
-      3: Eb
-      5: Gb
-      7: Bb
+      3: D#
+      5: F#
+      7: A#
 
   C diminished M7:
     root: C
     tones:
       1: C
-      3: Eb
-      5: Gb
+      3: D#
+      5: F#
       7: B
 
   Cdim maj7:
     root: C
     tones:
       1: C
-      3: Eb
-      5: Gb
+      3: D#
+      5: F#
       7: B
 
   CdimM7:
     root: C
     tones:
       1: C
-      3: Eb
-      5: Gb
+      3: D#
+      5: F#
       7: B
 
   Cm nondominant -5 679:
@@ -189,7 +189,7 @@ chords:
     root: C
     tones:
       1: C
-      3: Eb
+      3: D#
       5: G
       7: B
 
@@ -197,7 +197,7 @@ chords:
     root: C
     tones:
       1: C
-      3: Eb
+      3: D#
       5: G
       7: B
 
@@ -215,14 +215,14 @@ chords:
       1: C
       3: E
       5: G#
-      7: Bb
+      7: A#
 
   C nondominant 7:
     root: C
     tones:
       3: E
       5: G
-      7: Bb
+      7: A#
 
   C 9: # dominant 9th
     root: C
@@ -230,7 +230,7 @@ chords:
       1: C
       3: E
       5: G
-      7: Bb
+      7: A#
       9: D
 
   C7#9: # dominant 7, sharp 9
@@ -239,7 +239,7 @@ chords:
       1: C
       3: E
       5: G
-      7: Bb
+      7: A#
       9: D#
 
   CM9: # major 9th
@@ -274,7 +274,7 @@ chords:
     tones:
       1: C
       5: G
-      7: Bb
+      7: A#
       9: D
       11: F
 
@@ -282,20 +282,21 @@ chords:
     root: C
     tones:
       1: C
-      3: E♭
+      3: D#
       5: G
-      7: B♭
+      7: A#
       9: D
       11: F
 
-  C11: # dominant 11
-    root: C
+  B♭m11: # minor 11
+    root: Bb
     tones:
-      1: C
-      5: G
-      7: B♭
-      9: D
-      11: F
+      1: Bb
+      3: Db
+      5: F
+      7: Ab
+      9: C
+      11: Eb
 
   CM13: # major 13
     root: C
@@ -339,9 +340,9 @@ chords:
     root: C
     tones:
       1: C
-      3: Eb
+      3: D#
       5: G
-      7: Bb
+      7: A#
       9: D
       11: F
       13: A
@@ -351,7 +352,15 @@ chords:
     tones:
       1: C
       5: G
-      7: Bb
+      7: A#
       9: D
       11: F
       13: A
+
+  CMb5b7:
+    root: C
+    tones:
+      1: C
+      3: E
+      5: Gb
+      7: Bb

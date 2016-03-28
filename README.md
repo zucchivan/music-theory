@@ -1,6 +1,6 @@
 # Music 
 
-[![Build Status](https://travis-ci.org/go-music/music.svg?branch=master)](https://travis-ci.org/go-music/music) [![GoDoc](https://godoc.org/github.com/go-music/music?status.svg)](https://godoc.org/github.com/go-music/music) [![Go Report Card](https://goreportcard.com/badge/github.com/go-music/music)](https://goreportcard.com/report/github.com/go-music/music)
+[![Build Status](https://travis-ci.org/go-music/music.svg?branch=master)](https://travis-ci.org/go-music/music) [![GoDoc](https://godoc.org/github.com/go-music/music?status.svg)](https://godoc.org/github.com/go-music/music) [![Go Report Card](https://goreportcard.com/badge/github.com/go-music/music)](https://goreportcard.com/report/github.com/go-music/music) [![codebeat badge](https://codebeat.co/badges/f5c88d18-fff5-4bc6-affb-cdc55488f429)](https://codebeat.co/projects/github-com-go-music-music)
 
 https://github.com/go-music/music
 
@@ -8,13 +8,15 @@ Author: [Charney Kaye](http://w.charney.io)
 
 #### Music theory models in Go
 
-There's an example command-line utility `music.go` to demo the libraries, with `bin/` wrappers for different functions, as follows.
+There's an example command-line utility `music-theory.go` to demo the libraries, with a `bin/` wrapper.
 
-##### Chords
+To build and install `music-theory` to your machine:
 
-To build a chord, run `bin/chord` followed by the name of the chord, e.g.:
+    make install
 
-    $ bin/chord Cm nondominant -5 679
+Then, to calculate the note pitch classes for a specified Chord:
+
+    $ music-theory chord "Cm nondominant -5 679"
     
     root: C
     tones:
@@ -25,7 +27,7 @@ To build a chord, run `bin/chord` followed by the name of the chord, e.g.:
 
 To list the names of all the known chord-building rules, run `bin/chord ?`:
 
-    $ bin/chord ?
+    $ music-theory chords
     
     - Basic
     - Nondominant
@@ -66,15 +68,9 @@ To list the names of all the known chord-building rules, run `bin/chord ?`:
     - Major Thirteenth
     - Minor Thirteenth
 
-##### Scales
+To determine a key:
 
-*coming soon!*
-
-##### Keys
-      
-To build a key, use `bin/key` followed by the name of the key, e.g.:
-
-    $ bin/key G#m
+    $ music-theory key G#m
     
     root: G#
     mode: Minor

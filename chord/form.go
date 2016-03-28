@@ -594,16 +594,21 @@ func (this *Chord) parseForms(name string) {
 	var toDelete []Interval
 	for _, f := range forms {
 		if f.MatchString(name) {
-			for i, c := range f.add {
-				this.Tones[i], _ = this.Root.Step(c)
-			}
-			for _, i := range f.omit {
-				toDelete = append(toDelete, i)
-			}
+			toDelete = append(toDelete, this.applyForm(f)...)
 		}
 	}
-	for _, c := range toDelete {
-		delete(this.Tones, c)
+	for _, t := range toDelete {
+		delete(this.Tones, t)
+	}
+	return
+}
+
+func (this *Chord) applyForm(f Form) (toDelete []Interval) {
+	for i, c := range f.add {
+		this.Tones[i], _ = this.Root.Step(c)
+	}
+	for _, t := range f.omit {
+		toDelete = append(toDelete, t)
 	}
 	return
 }

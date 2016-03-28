@@ -27,8 +27,24 @@ const (
 	I16 Interval = 15
 )
 
+/*
+ *
+ private */
+
+// forAllIn the intervals 1-16 of a chord, run the given function.
+func forAllIn(setIntervals map[Interval]note.Class, callback classIteratorFunc) {
+	for _, i := range intervalOrder {
+		if class, isInSet := setIntervals[i]; isInSet {
+			callback(class)
+		}
+	}
+}
+
+// classIteratorFunc is run on a note class. See `ForAllIn`
+type classIteratorFunc func(class note.Class)
+
 // Order of all the intervals, e.g. for stepping from the root of a chord outward to its other tones.
-var Order = []Interval{
+var intervalOrder = []Interval{
 	I1,
 	I2,
 	I3,
@@ -46,20 +62,4 @@ var Order = []Interval{
 	I15,
 	I16,
 }
-
-/*
- *
- private */
-
-// forAllIn the intervals 1-16 of a chord, run the given function.
-func forAllIn(setIntervals map[Interval]note.Class, callback classIteratorFunc) {
-	for _, i := range Order {
-		if class, isInSet := setIntervals[i]; isInSet {
-			callback(class)
-		}
-	}
-}
-
-// classIteratorFunc is run on a note class. See `ForAllIn`
-type classIteratorFunc func(class note.Class)
 

@@ -10,7 +10,7 @@ import (
 )
 
 func TestInterval(t *testing.T) {
-	assert.Equal(t, 16, len(Order))
+	assert.Equal(t, 16, len(intervalOrder))
 }
 
 func TestForAllIn(t *testing.T) {

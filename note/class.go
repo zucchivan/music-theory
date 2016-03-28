@@ -31,7 +31,15 @@ func (from Class) Step(inc int) (Class, Octave) {
 }
 
 // String of the note, expressed with Sharps or Flats
-func (from Class) String(as AdjSymbol) string {
+func (from Class) String(with AdjSymbol) string {
+	return stringOf(from, with)
+}
+
+/*
+ *
+ private */
+
+func stringOf(from Class, with AdjSymbol) {
 	switch from {
 	case C:
 		return "C"
@@ -49,41 +57,46 @@ func (from Class) String(as AdjSymbol) string {
 		return "B"
 	}
 
-	switch as {
-	case Sharp:
-		switch from {
-		case Cs:
-			return "C#"
-		case Ds:
-			return "D#"
-		case Fs:
-			return "F#"
-		case Gs:
-			return "G#"
-		case As:
-			return "A#"
-		}
-	case Flat:
-		switch from {
-		case Cs:
-			return "Db"
-		case Ds:
-			return "Eb"
-		case Fs:
-			return "Gb"
-		case Gs:
-			return "Ab"
-		case As:
-			return "Bb"
-		}
+	if with == Sharp {
+		return stringSharpOf(from)
+	} else if with == Flat {
+		return stringFlatOf(from)
 	}
 
 	return "-"
 }
 
-/*
- *
- private */
+func stringSharpOf(from Class) {
+	switch from {
+	case Cs:
+		return "C#"
+	case Ds:
+		return "D#"
+	case Fs:
+		return "F#"
+	case Gs:
+		return "G#"
+	case As:
+		return "A#"
+	}
+	return "-"
+}
+
+func stringFlatOf(from Class) {
+	switch from {
+	case Cs:
+		return "Db"
+	case Ds:
+		return "Eb"
+	case Fs:
+		return "Gb"
+	case Gs:
+		return "Ab"
+	case As:
+		return "Bb"
+	}
+	return "-"
+}
 
 func baseNameOf(text string) Class {
 	if len(text) > 0 {

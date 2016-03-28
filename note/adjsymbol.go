@@ -28,6 +28,5 @@ const (
 
 var (
 	rgxSharps, _ = regexp.Compile("[♯#]")
-	rgxFlats, _ = regexp.Compile("[♭b]")
+	rgxFlats, _  = regexp.Compile("[♭b]")
 )
-

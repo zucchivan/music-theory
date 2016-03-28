@@ -6,11 +6,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
+	"fmt"
 	"github.com/go-music-theory/music-theory/key"
 	"github.com/go-music-theory/music-theory/note"
-	"io/ioutil"
 	"gopkg.in/yaml.v2"
-	"fmt"
+	"io/ioutil"
 )
 
 func TestChordExpectations(t *testing.T) {

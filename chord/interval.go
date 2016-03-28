@@ -62,4 +62,3 @@ var intervalOrder = []Interval{
 	I15,
 	I16,
 }
-

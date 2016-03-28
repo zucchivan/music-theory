@@ -3,8 +3,8 @@ package note
 
 // Note models a musical note
 type Note struct {
-	Class     Class   // Class of pitch
-	Octave    Octave  // Octave #
+	Class  Class  // Class of pitch
+	Octave Octave // Octave #
 }
 
 // Named note returns a Note model

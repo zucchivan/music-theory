@@ -139,19 +139,30 @@ func baseStepOf(text string) int {
 }
 
 func stepFrom(name Class, inc int) (Class, Octave) {
-	octave := Octave(0)
 	if inc > 0 {
-		for i := 0; i < inc; i++ {
-			shift := stepUp[name]
-			name = shift.Name
-			octave += shift.Octave
-		}
+		return stepFromUp(name, inc)
 	} else if inc < 0 {
-		for i := 0; i > inc; i-- {
-			shift := stepDown[name]
-			name = shift.Name
-			octave += shift.Octave
-		}
+		return stepFromDown(name, -inc)
+	}
+	return name, 0
+}
+
+func stepFromUp(name Class, inc int) (Class, Octave) {
+	octave := Octave(0)
+	for i := 0; i < inc; i++ {
+		shift := stepUp[name]
+		name = shift.Name
+		octave += shift.Octave
+	}
+	return name, octave
+}
+
+func stepFromDown(name Class, inc int) (Class, Octave) {
+	octave := Octave(0)
+	for i := 0; i < inc; i++ {
+		shift := stepDown[name]
+		name = shift.Name
+		octave += shift.Octave
 	}
 	return name, octave
 }

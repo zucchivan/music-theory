@@ -75,6 +75,7 @@ To list the names of all the known chord-building rules, run `bin/chord ?`:
 To build a key, use `bin/key` followed by the name of the key, e.g.:
 
     $ bin/key G#m
+    
     root: G#
     mode: Minor
 

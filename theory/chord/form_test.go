@@ -6,7 +6,6 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/go-music/music/theory/note"
-	"github.com/go-music/music/theory/interval"
 )
 
 func TestListAllForms(t *testing.T) {
@@ -20,11 +19,11 @@ func TestFormMatchString(t *testing.T) {
 
 func TestChordParseForms(t *testing.T) {
 	c := Of("Cm nondominant -5 +6 +7 +9")
-	assert.Equal(t, map[interval.Interval]note.Class{
-		interval.I3: note.DS,
-		interval.I6: note.A,
-		interval.I7: note.AS,
-		interval.I9: note.D,
+	assert.Equal(t, map[Interval]note.Class{
+		I3: note.DS,
+		I6: note.A,
+		I7: note.AS,
+		I9: note.D,
 	}, c.Tones)
 }
 

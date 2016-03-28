@@ -1,5 +1,5 @@
-// An interval is the difference between two pitches.
-package interval
+// A Chord Interval is how the members of the chord are counted, from 1 (the "root") to e.g. 3 (the "third") or 5 (the "fifth")
+package chord
 
 import (
 	"testing"

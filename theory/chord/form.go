@@ -5,7 +5,6 @@ import (
 	//"log"
 	"regexp"
 
-	"github.com/go-music/music/theory/interval"
 )
 
 // ListAllForms to list the names of all known chord forms
@@ -25,10 +24,10 @@ type Form struct {
 }
 
 // FormIntervalSet maps an interval-from-chord-root to a +/1 semitone adjustment
-type FormAdd map[interval.Interval]int
+type FormAdd map[Interval]int
 
 // FormIntervalOmit maps an interval-from-chord-root to omit
-type FormOmit []interval.Interval
+type FormOmit []Interval
 
 // MatchString processes the positive/negative regular expressions to determine if this form matches a string.
 func (this *Form) MatchString(s string) bool {
@@ -69,9 +68,9 @@ var forms = []Form{
 	Form{
 		Name: "Basic",
 		add: FormAdd{
-			interval.I1: 0, // root
-			interval.I3: 4, // major 3rd
-			interval.I5: 7, // perfect 5th
+			I1: 0, // root
+			I3: 4, // major 3rd
+			I5: 7, // perfect 5th
 		},
 	},
 
@@ -79,7 +78,7 @@ var forms = []Form{
 		Name: "Nondominant",
 		pos: exp(nondominantExp),
 		omit: FormOmit{
-			interval.I1, // no root
+			I1, // no root
 		},
 	},
 
@@ -89,8 +88,8 @@ var forms = []Form{
 		Name: "Major Triad",
 		pos: exp("^"+majorExp+"([^a-z]|$)"),
 		add: FormAdd{
-			interval.I3: 4, // major 3rd
-			interval.I5: 7, // perfect 5th
+			I3: 4, // major 3rd
+			I5: 7, // perfect 5th
 		},
 	},
 
@@ -98,8 +97,8 @@ var forms = []Form{
 		Name: "Minor Triad",
 		pos: exp("^"+minorExp+"([^a-z]|$)"),
 		add: FormAdd{
-			interval.I3: 3, // minor 3rd
-			interval.I5: 7, // perfect 5th
+			I3: 3, // minor 3rd
+			I5: 7, // perfect 5th
 		},
 	},
 
@@ -107,8 +106,8 @@ var forms = []Form{
 		Name: "Augmented Triad",
 		pos: exp("^"+augmentedExp),
 		add: FormAdd{
-			interval.I3: 4, // major 3rd
-			interval.I5: 8, // augmented 5th
+			I3: 4, // major 3rd
+			I5: 8, // augmented 5th
 		},
 	},
 
@@ -116,8 +115,8 @@ var forms = []Form{
 		Name: "Diminished Triad",
 		pos: exp("^"+diminishedExp),
 		add: FormAdd{
-			interval.I3: 3, // diminished (minor) 3rd
-			interval.I5: 6, // diminished 5th
+			I3: 3, // diminished (minor) 3rd
+			I5: 6, // diminished 5th
 		},
 	},
 
@@ -125,11 +124,11 @@ var forms = []Form{
 		Name: "Suspended Triad",
 		pos: exp("^"+suspendedExp),
 		add: FormAdd{
-			interval.I4: 5, // 4th
-			interval.I5: 7, // perfect 5th
+			I4: 5, // 4th
+			I5: 7, // perfect 5th
 		},
 		omit: FormOmit{
-			interval.I3,
+			I3,
 		},
 	},
 
@@ -139,7 +138,7 @@ var forms = []Form{
 		Name: "Omit Fifth",
 		pos: exp(omitExp+nExp+"5"),
 		omit: FormOmit{
-			interval.I5, // no fifth
+			I5, // no fifth
 		},
 	},
 
@@ -147,7 +146,7 @@ var forms = []Form{
 		Name: "Flat Fifth",
 		pos: exp(flatExp+nExp+"5"),
 		add: FormAdd{
-			interval.I5: 6, // flat 5th
+			I5: 6, // flat 5th
 		},
 	},
 
@@ -157,7 +156,7 @@ var forms = []Form{
 		Name: "Add Sixth",
 		pos: exp("6"),
 		add: FormAdd{
-			interval.I6: 9, // 6th
+			I6: 9, // 6th
 		},
 	},
 
@@ -165,14 +164,14 @@ var forms = []Form{
 		Name: "Augmented Sixth",
 		pos: exp(augmentedExp+nExp+"6"),
 		add: FormAdd{
-			interval.I6: 10, // augmented 6th
+			I6: 10, // augmented 6th
 		},
 	},
 
 	Form{
 		Name: "Omit Sixth",
 		pos: exp(omitExp+nExp+"6"),
-		omit: FormOmit{interval.I6},
+		omit: FormOmit{I6},
 	},
 
 	// Seventh
@@ -181,7 +180,7 @@ var forms = []Form{
 		Name: "Add Seventh",
 		pos: exp("7"),
 		add: FormAdd{
-			interval.I7: 10, // dominant 7th
+			I7: 10, // dominant 7th
 		},
 	},
 
@@ -189,7 +188,7 @@ var forms = []Form{
 		Name: "Dominant Seventh",
 		pos: exp(dominantExp+nExp+"7"),
 		add: FormAdd{
-			interval.I7: 10, // dominant 7th
+			I7: 10, // dominant 7th
 		},
 	},
 
@@ -197,7 +196,7 @@ var forms = []Form{
 		Name: "Major Seventh",
 		pos: exp(majorExp+nExp+"7"),
 		add: FormAdd{
-			interval.I7: 11, // major 7th
+			I7: 11, // major 7th
 		},
 	},
 
@@ -205,7 +204,7 @@ var forms = []Form{
 		Name: "Minor Seventh",
 		pos: exp(minorExp+nExp+"7"),
 		add: FormAdd{
-			interval.I7: 10, // minor 7th
+			I7: 10, // minor 7th
 		},
 		omit: FormOmit{},
 	},
@@ -214,7 +213,7 @@ var forms = []Form{
 		Name: "Diminished Seventh",
 		pos: exp(diminishedExp+nExp+"7"),
 		add: FormAdd{
-			interval.I7: 9, // diminished 7th
+			I7: 9, // diminished 7th
 		},
 	},
 
@@ -222,9 +221,9 @@ var forms = []Form{
 		Name: "Half Diminished Seventh",
 		pos: exp(halfExp+nExp+diminishedExp+nExp+"7"),
 		add: FormAdd{
-			interval.I3: 3, // minor 3rd
-			interval.I5: 6, // diminished 5th
-			interval.I7: 10, // minor 7th
+			I3: 3, // minor 3rd
+			I5: 6, // diminished 5th
+			I7: 10, // minor 7th
 		},
 	},
 
@@ -257,8 +256,8 @@ var forms = []Form{
 		Name: "Harmonic Seventh",
 		pos: exp(harmonicExp+nExp+"7"),
 		add: FormAdd{
-			interval.I3: 4, // major 3rd
-			interval.I5: 7, // perfect 5th
+			I3: 4, // major 3rd
+			I5: 7, // perfect 5th
 		},
 	},
 
@@ -266,7 +265,7 @@ var forms = []Form{
 		Name: "Omit Seventh",
 		pos: exp(omitExp+nExp+"7"),
 		omit: FormOmit{
-			interval.I7, // no 7th
+			I7, // no 7th
 		},
 	},
 
@@ -276,7 +275,7 @@ var forms = []Form{
 		Name: "Add Ninth",
 		pos: exp("9"),
 		add: FormAdd{
-			interval.I9: 14, // 9th
+			I9: 14, // 9th
 		},
 	},
 
@@ -284,8 +283,8 @@ var forms = []Form{
 		Name: "Dominant Ninth",
 		pos: exp(dominantExp+nExp+"9"),
 		add: FormAdd{
-			interval.I7: 10, // minor 7th
-			interval.I9: 14, // dominant 9th
+			I7: 10, // minor 7th
+			I9: 14, // dominant 9th
 		},
 	},
 
@@ -293,8 +292,8 @@ var forms = []Form{
 		Name: "Major Ninth",
 		pos: exp(majorExp+nExp+"9"),
 		add: FormAdd{
-			interval.I7: 11, // major 7th
-			interval.I9: 14, // dominant 9th
+			I7: 11, // major 7th
+			I9: 14, // dominant 9th
 		},
 	},
 
@@ -302,8 +301,8 @@ var forms = []Form{
 		Name: "Minor Ninth",
 		pos: exp(minorExp+nExp+"9"),
 		add: FormAdd{
-			interval.I7: 10, // minor 7th
-			interval.I9: 14, // dominant 9th
+			I7: 10, // minor 7th
+			I9: 14, // dominant 9th
 		},
 	},
 
@@ -311,7 +310,7 @@ var forms = []Form{
 		Name: "Sharp Ninth",
 		pos: exp(sharpExp+nExp+"9"),
 		add: FormAdd{
-			interval.I9: 15, // sharp 9th
+			I9: 15, // sharp 9th
 		},
 	},
 
@@ -319,7 +318,7 @@ var forms = []Form{
 		Name: "Omit Ninth",
 		pos: exp(omitExp+nExp+"9"),
 		omit: FormOmit{
-			interval.I9, // no 9th
+			I9, // no 9th
 		},
 	},
 
@@ -329,7 +328,7 @@ var forms = []Form{
 		Name: "Add Eleventh",
 		pos: exp("11"),
 		add: FormAdd{
-			interval.I11: 17, // 11th
+			I11: 17, // 11th
 		},
 	},
 
@@ -337,12 +336,12 @@ var forms = []Form{
 		Name: "Dominant Eleventh",
 		pos: exp(dominantExp+nExp+"11"),
 		add: FormAdd{
-			interval.I7: 10, // minor 7th
-			interval.I9: 14, // dominant 9th
-			interval.I11: 17, // dominant 11th
+			I7: 10, // minor 7th
+			I9: 14, // dominant 9th
+			I11: 17, // dominant 11th
 		},
 		omit: FormOmit{
-			interval.I3, // no 3rd
+			I3, // no 3rd
 		},
 	},
 
@@ -350,9 +349,9 @@ var forms = []Form{
 		Name: "Major Eleventh",
 		pos: exp(majorExp+nExp+"11"),
 		add: FormAdd{
-			interval.I7: 11, // major 7th
-			interval.I9: 14, // dominant 9th
-			interval.I11: 17, // dominant 11th
+			I7: 11, // major 7th
+			I9: 14, // dominant 9th
+			I11: 17, // dominant 11th
 		},
 	},
 
@@ -360,10 +359,10 @@ var forms = []Form{
 		Name: "Minor Eleventh",
 		pos: exp(minorExp+nExp+"11"),
 		add: FormAdd{
-			interval.I3: 3, // minor 3rd
-			interval.I7: 10, // minor 7th
-			interval.I9: 14, // dominant 9th
-			interval.I11: 17, // dominant 11th
+			I3: 3, // minor 3rd
+			I7: 10, // minor 7th
+			I9: 14, // dominant 9th
+			I11: 17, // dominant 11th
 		},
 	},
 
@@ -371,7 +370,7 @@ var forms = []Form{
 		Name: "Omit Eleventh",
 		pos: exp(omitExp+nExp+"11"),
 		omit: FormOmit{
-			interval.I11,
+			I11,
 		},
 	},
 
@@ -381,7 +380,7 @@ var forms = []Form{
 		Name: "Add Thirteenth",
 		pos: exp("13"),
 		add: FormAdd{
-			interval.I13: 21, // dominant 13th
+			I13: 21, // dominant 13th
 		},
 	},
 
@@ -389,13 +388,13 @@ var forms = []Form{
 		Name: "Dominant Thirteenth",
 		pos: exp(dominantExp+nExp+"13"),
 		add: FormAdd{
-			interval.I7: 10, // minor 7th
-			interval.I9: 14, // dominant 9th
-			interval.I11: 17, // dominant 11th
-			interval.I13: 21, // dominant 13th
+			I7: 10, // minor 7th
+			I9: 14, // dominant 9th
+			I11: 17, // dominant 11th
+			I13: 21, // dominant 13th
 		},
 		omit: FormOmit{
-			interval.I3, // no 3rd
+			I3, // no 3rd
 		},
 	},
 
@@ -403,11 +402,11 @@ var forms = []Form{
 		Name: "Major Thirteenth",
 		pos: exp(majorExp+nExp+"13"),
 		add: FormAdd{
-			interval.I3: 4, // major 3rd
-			interval.I7: 11, // major 7th
-			interval.I9: 14, // dominant 9th
-			interval.I11: 17, // dominant 11th
-			interval.I13: 21, // dominant 13th
+			I3: 4, // major 3rd
+			I7: 11, // major 7th
+			I9: 14, // dominant 9th
+			I11: 17, // dominant 11th
+			I13: 21, // dominant 13th
 		},
 	},
 
@@ -415,11 +414,11 @@ var forms = []Form{
 		Name: "Minor Thirteenth",
 		pos: exp(minorExp+nExp+"13"),
 		add: FormAdd{
-			interval.I3: 3, // minor 3rd
-			interval.I7: 10, // minor 7th
-			interval.I9: 14, // dominant 9th
-			interval.I11: 17, // dominant 11th
-			interval.I13: 21, // dominant 13th
+			I3: 3, // minor 3rd
+			I7: 10, // minor 7th
+			I9: 14, // dominant 9th
+			I11: 17, // dominant 11th
+			I13: 21, // dominant 13th
 		},
 	},
 
@@ -593,7 +592,7 @@ func (this *Form) matchPosNegString(s string) bool {
 
 // Build the chord by processing all Forms against the given name.
 func (this *Chord) parseForms(name string) {
-	toDelete := make([]interval.Interval, 0)
+	toDelete := make([]Interval, 0)
 	for _, f := range forms {
 		if f.MatchString(name) {
 			for i, c := range f.add {

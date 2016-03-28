@@ -1,13 +1,13 @@
-// An interval is the difference between two pitches.
-package interval
+// A Chord Interval is how the members of the chord are counted, from 1 (the "root") to e.g. 3 (the "third") or 5 (the "fifth")
+package chord
 
 import (
 	"github.com/go-music/music/theory/note"
 )
 
 func ForAllIn(setIntervals map[Interval]note.Class, callback ClassIteratorFunc) {
-	for _, interval := range Order {
-		if class, isInSet := setIntervals[interval]; isInSet {
+	for _, i := range Order {
+		if class, isInSet := setIntervals[i]; isInSet {
 			callback(class)
 		}
 	}

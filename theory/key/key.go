@@ -2,7 +2,6 @@
 package key
 
 import (
-	"github.com/go-music/music/theory/interval"
 	"github.com/go-music/music/theory/note"
 	"regexp"
 )
@@ -26,9 +25,6 @@ const (
 	MajorKeyMode KeyMode = "Major"
 	MinorKeyMode KeyMode = "Minor"
 )
-
-// Tones are a set of pitch classes
-type Tones map[interval.Interval]note.Class
 
 /*
  *

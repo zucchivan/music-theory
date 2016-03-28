@@ -425,6 +425,7 @@ var forms = []Form{
 
 	// Lydian
 
+	/*
 	Form{
 		Name: "Lydian",
 		pos: exp("lyd"),
@@ -436,10 +437,11 @@ var forms = []Form{
 		pos: exp(omitExp+nExp+"lyd"),
 		// TODO
 	},
+	*/
 
 	// Specific
 
-	Form{
+/*	Form{
 		Name: "AlphaSpecific",
 		pos: exp("alpha"),
 		// TODO
@@ -565,7 +567,7 @@ var forms = []Form{
 		Name: "SyntheticChordGeneral",
 		pos: exp("synthetic"),
 		// TODO
-	},
+	},*/
 
 }
 

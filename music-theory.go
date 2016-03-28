@@ -1,4 +1,4 @@
-// Opinionated models of the building blocks of music theory
+// Notes, Keys, Chords and Scales
 //
 // Author:  Charney Kaye
 //

@@ -25,11 +25,3 @@ func TestClassNamed(t *testing.T) {
 	n := ClassNamed("C")
 	assert.Equal(t, n, C)
 }
-
-func TestShiftTime(t *testing.T) {
-	n := Named("C")
-	n.Position = 5
-	n2 := n.ShiftTime(1)
-	assert.NotNil(t, n2)
-	assert.Equal(t, n2.Position, float64(6))
-}

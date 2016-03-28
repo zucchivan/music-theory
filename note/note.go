@@ -3,12 +3,8 @@ package note
 
 // Note models a musical note
 type Note struct {
-	Performer string  // name of performer (for reference)
-	Position  float64 // >0, # of beats
-	Duration  float64 // >0, # of beats
 	Class     Class   // Class of pitch
 	Octave    Octave  // Octave #
-	Code      string  // custom, directly from music
 }
 
 // Named note returns a Note model
@@ -35,11 +31,4 @@ func OfClass(class Class) (n *Note) {
 func ClassNamed(text string) Class {
 	n := Named(text)
 	return n.Class
-}
-
-// ShiftTime to copy the note to another position in time.
-func (from *Note) ShiftTime(t float64) *Note {
-	to := *from
-	to.Position += t
-	return &to
 }

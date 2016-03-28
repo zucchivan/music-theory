@@ -2,7 +2,7 @@
 package key
 
 import (
-	"github.com/go-music-theory/music-theory/note"
+	"gopkg.in/music-theory.v0/note"
 	"regexp"
 )
 

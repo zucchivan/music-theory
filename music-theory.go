@@ -82,8 +82,8 @@ import (
 	"github.com/codegangsta/cli"
 	"gopkg.in/yaml.v2"
 
-	"github.com/go-music-theory/music-theory/chord"
-	"github.com/go-music-theory/music-theory/key"
+	"gopkg.in/music-theory.v0/chord"
+	"gopkg.in/music-theory.v0/key"
 )
 
 func main() {

@@ -12,14 +12,14 @@ func TestNameOf(t *testing.T) {
 	testNameOf(t, "C#", Cs, 0, "C#", "Db")
 	testNameOf(t, "Cb", B, -1, "B", "B")
 	testNameOf(t, "D", D, 0, "D", "D")
-	testNameOf(t, "Dsharp", Ds, 0, "D#", "Eb")
-	testNameOf(t, "Dflat", Cs, 0, "C#", "Db")
+	testNameOf(t, "D#", Ds, 0, "D#", "Eb")
+	testNameOf(t, "D♭", Cs, 0, "C#", "Db")
 	testNameOf(t, "E", E, 0, "E", "E")
-	testNameOf(t, "Esh", F, 0, "F", "F")
-	testNameOf(t, "Efl", Ds, 0, "D#", "Eb")
+	testNameOf(t, "E#", F, 0, "F", "F")
+	testNameOf(t, "E♭", Ds, 0, "D#", "Eb")
 	testNameOf(t, "F", F, 0, "F", "F")
-	testNameOf(t, "Fs", Fs, 0, "F#", "Gb")
-	testNameOf(t, "Ff", E, 0, "E", "E")
+	testNameOf(t, "F#", Fs, 0, "F#", "Gb")
+	testNameOf(t, "F♭", E, 0, "E", "E")
 	testNameOf(t, "G", G, 0, "G", "G")
 	testNameOf(t, "G♯", Gs, 0, "G#", "Ab")
 	testNameOf(t, "Gb", Fs, 0, "F#", "Gb")
@@ -51,6 +51,12 @@ func Test_baseStepOf(t *testing.T) {
 
 func Test_stepFrom(t *testing.T) {
 	//assert.Equal(t, false, true)
+}
+
+func TestStringOf(t *testing.T) {
+	assert.Equal(t, "C#", stringOf(Cs, Sharp))
+	assert.Equal(t, "Db", stringOf(Cs, Flat))
+	assert.Equal(t, "-", stringOf(Cs, No))
 }
 
 /*

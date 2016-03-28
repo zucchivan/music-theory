@@ -39,7 +39,7 @@ func (from Class) String(with AdjSymbol) string {
  *
  private */
 
-func stringOf(from Class, with AdjSymbol) {
+func stringOf(from Class, with AdjSymbol) string {
 	switch from {
 	case C:
 		return "C"
@@ -66,7 +66,7 @@ func stringOf(from Class, with AdjSymbol) {
 	return "-"
 }
 
-func stringSharpOf(from Class) {
+func stringSharpOf(from Class) string {
 	switch from {
 	case Cs:
 		return "C#"
@@ -82,7 +82,7 @@ func stringSharpOf(from Class) {
 	return "-"
 }
 
-func stringFlatOf(from Class) {
+func stringFlatOf(from Class) string {
 	switch from {
 	case Cs:
 		return "Db"
@@ -126,24 +126,16 @@ func baseNameOf(text string) Class {
 func baseStepOf(text string) int {
 	if len(text) < 2 {
 		return 0
-	} else if text[1:2] == "#" { // Sharp e.g. "C#"
-		return 1
-	} else if text[1:2] == "s" {
-		// Sharp e.g. "Cs" or "Csharp"
-		return 1
-	} else if text[1:2] == "b" { // Flat e.g. "Db"
-		return -1
-	} else if text[1:2] == "f" { // Flat e.g. "Cf" or "Cflat"
-		return -1
-	} else if len(text) >= 4 {
-		// Special characters have string length=3
-		if text[1:4] == "♭" {
-			return -1 // Flat e.g. "E♭"
-		} else if text[1:4] == "♯" {
-			return 1 // Sharp e.g. "A♯"
-		}
 	}
-	return 0
+
+	switch AdjSymbolBegin(text[1:]) {
+	case Sharp:
+		return 1
+	case Flat:
+		return -1
+	default:
+		return 0
+	}
 }
 
 func stepFrom(name Class, inc int) (Class, Octave) {

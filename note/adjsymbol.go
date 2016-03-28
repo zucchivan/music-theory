@@ -5,12 +5,23 @@ import "regexp"
 
 // AdjSymbolOf the adjustment symbol (Sharp or Flat) for a given name (e.g. of a chord, scale or key)
 func AdjSymbolOf(name string) AdjSymbol {
-	numSharps := len(rgxSharps.FindAllString(name, -1))
-	numFlats := len(rgxFlats.FindAllString(name, -1))
+	numSharps := len(rgxSharpIn.FindAllString(name, -1))
+	numFlats := len(rgxFlatIn.FindAllString(name, -1))
 	if numSharps >= numFlats {
 		return Sharp
 	} else {
 		return Flat
+	}
+}
+
+// AdjSymbolBegin the adjustment symbol (Sharp or Flat) that begins a given name (e.g. the Root of a chord, scale or key)
+func AdjSymbolBegin(name string) AdjSymbol {
+	if rgxSharpBegin.MatchString(name) {
+		return Sharp
+	} else if rgxFlatBegin.MatchString(name) {
+		return Flat
+	} else {
+		return No
 	}
 }
 
@@ -20,6 +31,7 @@ type AdjSymbol int
 const (
 	Sharp AdjSymbol = iota
 	Flat
+	No
 )
 
 /*
@@ -27,6 +39,8 @@ const (
  private */
 
 var (
-	rgxSharps, _ = regexp.Compile("[♯#]")
-	rgxFlats, _  = regexp.Compile("[♭b]")
+	rgxSharpIn, _ = regexp.Compile("[♯#]")
+	rgxFlatIn, _  = regexp.Compile("[♭b]")
+	rgxSharpBegin, _ = regexp.Compile("^[♯#]")
+	rgxFlatBegin, _  = regexp.Compile("^[♭b]")
 )

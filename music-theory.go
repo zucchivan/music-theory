@@ -64,7 +64,7 @@
 //     - Major Thirteenth
 //     - Minor Thirteenth
 //
-// To calculate the note pitch classes for a specified **Scale**:
+// To calculate the note pitch classes for a specified Scale:
 //
 //     $ music-theory scale "C aug"
 //

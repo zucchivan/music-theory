@@ -68,10 +68,13 @@
 //
 // To determine a key:
 //
-//     $ music-theory key G#m
+//    $ music-theory key Db
 //
-//     root: G#
-//     mode: Minor
+//    root: Db
+//    mode: Major
+//    relative:
+//      root: Bb
+//      mode: Minor
 //
 package main
 

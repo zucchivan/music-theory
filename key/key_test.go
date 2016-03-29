@@ -23,8 +23,9 @@ func TestKeys(t *testing.T) {
 	assert.True(t, len(testExpectations.Keys) > 0)
 	for name, expect := range testExpectations.Keys {
 		actual := Of(name)
-		assert.Equal(t, note.ClassNamed(expect.Root), actual.Root, fmt.Sprintf("name:%v expect.Root:%v actual.Root:%v", name, expect.Root, actual.Root))
-		assert.Equal(t, expect.Mode, actual.Mode, fmt.Sprintf("name:%v expect.Mode:%v actual.Mode:%v", name, expect.Mode, actual.Mode))
+		expectMode := modeOf(expect.Mode)
+		assert.Equal(t, note.ClassNamed(expect.Root), actual.Root, fmt.Sprintf("name:%v expect.Root=%v actual.Root=%v", name, expect.Root, actual.Root))
+		assert.Equal(t, expectMode, actual.Mode, fmt.Sprintf("name:%v expect.Mode=%v actual.Mode==%v", name, expectMode, actual.Mode))
 	}
 }
 
@@ -39,7 +40,7 @@ func TestOf_Invalid(t *testing.T) {
 
 type testKey struct {
 	Root string
-	Mode Mode
+	Mode string
 }
 
 type testExpectationManifest struct {

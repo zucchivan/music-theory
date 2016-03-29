@@ -9,8 +9,7 @@ import (
 )
 
 func TestListAllForms(t *testing.T) {
-	l := ListAllForms()
-	assert.Equal(t, len(forms), len(l))
+	assert.Equal(t, len(forms), len(ChordFormList))
 }
 
 func TestFormMatchString(t *testing.T) {

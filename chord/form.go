@@ -6,14 +6,6 @@ import (
 	"regexp"
 )
 
-// ListAllForms to list the names of all known chord forms
-func ListAllForms() (list []string) {
-	for _, f := range forms {
-		list = append(list, f.Name)
-	}
-	return
-}
-
 // Form is identified by positive/negative regular expressions, and then adds/removes pitch classes by interval from the root of the chord.
 type Form struct {
 	Name string

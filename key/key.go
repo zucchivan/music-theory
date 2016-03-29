@@ -3,7 +3,6 @@ package key
 
 import (
 	"github.com/go-music-theory/music-theory/note"
-	"regexp"
 )
 
 // Of a particular key, e.g. Of("C minor 7")
@@ -16,46 +15,21 @@ func Of(name string) Key {
 // Key is a model of a musical key signature
 type Key struct {
 	Root note.Class
+	AdjSymbol note.AdjSymbol
 	Mode Mode
 }
-
-// Mode is the mode of a key, e.g. Major or Minor
-type Mode string
-
-const (
-	MajorKeyMode Mode = "Major"
-	MinorKeyMode Mode = "Minor"
-)
 
 /*
  *
  private */
 
 func (this *Key) parse(name string) {
+	// determine whether the name is "sharps" or "flats"
+	this.AdjSymbol = note.AdjSymbolOf(name)
+
 	// parse the root, and keep the remaining string
 	this.Root, name = note.RootAndRemaining(name)
 
-	// parse the chord Mode
-	switch {
-	case rgxKeyMajor.MatchString(name):
-		this.Mode = MajorKeyMode
-	case rgxKeyMinor.MatchString(name):
-		this.Mode = MinorKeyMode
-	default:
-		this.Mode = MajorKeyMode
-	}
-}
-
-/*
- *
- private */
-
-var (
-	rgxKeyMajor *regexp.Regexp
-	rgxKeyMinor *regexp.Regexp
-)
-
-func init() {
-	rgxKeyMajor, _ = regexp.Compile("^(M|maj|major)")
-	rgxKeyMinor, _ = regexp.Compile("^(m|min|minor)")
+	// parse the key mode
+	this.parseMode(name)
 }

@@ -7,8 +7,8 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"fmt"
-	"github.com/go-music-theory/music-theory/key"
-	"github.com/go-music-theory/music-theory/note"
+	"gopkg.in/music-theory.v0/key"
+	"gopkg.in/music-theory.v0/note"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 )

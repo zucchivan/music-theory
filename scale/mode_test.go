@@ -4,7 +4,7 @@ package scale
 import (
 	"testing"
 
-	"github.com/go-music-theory/music-theory/note"
+	"gopkg.in/music-theory.v0/note"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -116,9 +116,9 @@ import (
 
 	"github.com/codegangsta/cli"
 
-	"github.com/go-music-theory/music-theory/chord"
-	"github.com/go-music-theory/music-theory/key"
-	"github.com/go-music-theory/music-theory/scale"
+	"gopkg.in/music-theory.v0/chord"
+	"gopkg.in/music-theory.v0/key"
+	"gopkg.in/music-theory.v0/scale"
 )
 
 func main() {

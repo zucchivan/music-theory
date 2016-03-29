@@ -15,6 +15,11 @@ func TestAdjSymbolOf(t *testing.T) {
 	assert.Equal(t, Flat, AdjSymbolOf("G♭M"))
 	assert.Equal(t, Sharp, AdjSymbolOf("A#m"))
 	assert.Equal(t, Sharp, AdjSymbolOf("A♯M♯5"))
+	assert.Equal(t, Flat, AdjSymbolOf("C minor"))
+	assert.Equal(t, Flat, AdjSymbolOf("C dim"))
+	assert.Equal(t, Sharp, AdjSymbolOf("CM M9 m7")) // More Sharpish than Flattish
+	assert.Equal(t, Flat, AdjSymbolOf("Cm m9 M7")) // More Flattish than Sharpish
+	assert.Equal(t, Sharp, AdjSymbolOf("C major"))
 }
 
 func TestAdjSymbolBegin(t *testing.T) {

@@ -21,7 +21,7 @@
 //       7: A#
 //       9: D
 //
-// To list the names of all the known chord-building rules, run `bin/chord ?`:
+// To list the names of all the known chord-building rules:
 //
 //     $ music-theory chords
 //
@@ -64,7 +64,39 @@
 //     - Major Thirteenth
 //     - Minor Thirteenth
 //
-// Keys
+// To calculate the note pitch classes for a specified **Scale**:
+//
+//     $ music-theory scale "C aug"
+//
+//     root: C
+//     tones:
+//     1: C
+//     2: D#
+//     3: E
+//     4: G
+//     5: G#
+//     6: B
+//
+// To list the names of all the known scale-building rules:
+//
+//     $ music-theory scales
+//
+//     - Default (Major)
+//     - Minor
+//     - Major
+//     - Natural Minor
+//     - Diminished
+//     - Augmented
+//     - Melodic Minor Ascend
+//     - Melodic Minor Descend
+//     - Harmonic Minor
+//     - Ionian
+//     - Dorian
+//     - Phrygian
+//     - Lydian
+//     - Mixolydian
+//     - Aeolian
+//     - Locrian
 //
 // To determine a key:
 //
@@ -86,6 +118,7 @@ import (
 
 	"github.com/go-music-theory/music-theory/chord"
 	"github.com/go-music-theory/music-theory/key"
+	"github.com/go-music-theory/music-theory/scale"
 )
 
 func main() {
@@ -123,6 +156,31 @@ var commands = []cli.Command{
 		Description: "The Chord DNA is this software is a sequential chain of rules to be executed by matching text in the chord name to its musical implications from the root of the chord.",
 		Action: func(c *cli.Context) {
 			fmt.Printf("%s", chord.ChordFormList.ToYAML())
+		},
+	},
+
+	{ // Build a Scale
+		Name:        "scale",
+		Aliases:     []string{"c"},
+		Usage:       "build a Scale",
+		Description: "Scale is any set of musical notes ordered by fundamental frequency or pitch specified by a name, e.g. C or Cm6 or D♭m679-5",
+		Action: func(c *cli.Context) {
+			name := c.Args().First()
+			if len(name) > 0 {
+				fmt.Printf("%s", scale.Of(name).ToYAML())
+			} else {
+				// no arguments
+				cli.ShowCommandHelp(c, "scale")
+			}
+		},
+	},
+
+	{ // List all Scales
+		Name:        "scales",
+		Usage:       "list all known Scales",
+		Description: "The Scale DNA is this software is a sequential chain of rules to be executed by matching text in the scale name to its musical implications from the root of the scale.",
+		Action: func(c *cli.Context) {
+			fmt.Printf("%s", scale.ScaleModeList.ToYAML())
 		},
 	},
 

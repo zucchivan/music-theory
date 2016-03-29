@@ -32,8 +32,8 @@ func specFrom(k Key) specKey {
 }
 
 type specKey struct {
-	Root string
-	Mode string
+	Root     string
+	Mode     string
 	Relative specRelativeKey
 }
 

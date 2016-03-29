@@ -7,10 +7,19 @@ import "regexp"
 func AdjSymbolOf(name string) AdjSymbol {
 	numSharps := len(rgxSharpIn.FindAllString(name, -1))
 	numFlats := len(rgxFlatIn.FindAllString(name, -1))
-	if numSharps >= numFlats {
+	numSharpish := len(rgxSharpishIn.FindAllString(name, -1))
+	numFlattish := len(rgxFlattishIn.FindAllString(name, -1))
+	// sharp/flat has precedent over sharpish/flattish; overall default is sharp
+	if numSharps > 0 && numSharps > numFlats {
 		return Sharp
-	} else {
+	} else if numFlats > 0 {
 		return Flat
+	} else if numSharpish > 0 && numSharpish > numFlattish {
+		return Sharp
+	} else if numFlattish > 0 {
+		return Flat
+	} else {
+		return Sharp
 	}
 }
 
@@ -29,9 +38,9 @@ func AdjSymbolBegin(name string) AdjSymbol {
 type AdjSymbol int
 
 const (
-	Sharp AdjSymbol = iota
+	No AdjSymbol = iota
+	Sharp
 	Flat
-	No
 )
 
 /*
@@ -39,8 +48,10 @@ const (
  private */
 
 var (
-	rgxSharpIn, _ = regexp.Compile("[♯#]")
-	rgxFlatIn, _  = regexp.Compile("[♭b]")
+	rgxSharpIn, _    = regexp.Compile("[♯#]|major")
+	rgxFlatIn, _     = regexp.Compile("[♭b]")
 	rgxSharpBegin, _ = regexp.Compile("^[♯#]")
 	rgxFlatBegin, _  = regexp.Compile("^[♭b]")
+	rgxSharpishIn, _ = regexp.Compile("(M|maj|major|aug)")
+	rgxFlattishIn, _ = regexp.Compile("([^a-z]|^)(m|min|minor|dim)")
 )

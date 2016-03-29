@@ -2,8 +2,8 @@
 package key
 
 import (
-	"testing"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestModeString(t *testing.T) {

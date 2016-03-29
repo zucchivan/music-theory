@@ -14,9 +14,9 @@ func Of(name string) Key {
 
 // Key is a model of a musical key signature
 type Key struct {
-	Root note.Class
+	Root      note.Class
 	AdjSymbol note.AdjSymbol
-	Mode Mode
+	Mode      Mode
 }
 
 /*

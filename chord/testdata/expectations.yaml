@@ -50,23 +50,23 @@ chords:
     root: C
     tones:
       1: C
-      3: D#
+      3: Eb
       5: G
 
   C min:
     root: C
     tones:
       1: C
-      3: D#
+      3: Eb
       5: G
 
   C minor 7th:
     root: C
     tones:
       1: C
-      3: D#
+      3: Eb
       5: G
-      7: A#
+      7: Bb
 
   Caug:
     root: C
@@ -79,8 +79,8 @@ chords:
     root: C
     tones:
       1: C
-      3: D#
-      5: F#
+      3: Eb
+      5: Gb
 
   C sus:
     root: C
@@ -101,9 +101,9 @@ chords:
     root: C
     tones:
       1: C
-      3: D#
+      3: Eb
       5: G
-      7: A#
+      7: Bb
 
   Cdom7:
     root: C
@@ -133,63 +133,63 @@ chords:
     root: C
     tones:
       1: C
-      3: D#
-      5: F#
+      3: Eb
+      5: Gb
       7: A
 
   Cdim7:
     root: C
     tones:
       1: C
-      3: D#
-      5: F#
+      3: Eb
+      5: Gb
       7: A
 
   C half diminished 7:
     root: C
     tones:
       1: C
-      3: D#
-      5: F#
-      7: A#
+      3: Eb
+      5: Gb
+      7: Bb
 
   C diminished M7:
     root: C
     tones:
       1: C
-      3: D#
-      5: F#
+      3: Eb
+      5: Gb
       7: B
 
   Cdim maj7:
     root: C
     tones:
       1: C
-      3: D#
-      5: F#
+      3: Eb
+      5: Gb
       7: B
 
   CdimM7:
     root: C
     tones:
       1: C
-      3: D#
-      5: F#
+      3: Eb
+      5: Gb
       7: B
 
   Cm nondominant -5 679:
     root: C
     tones:
-      3: D#
+      3: Eb
       6: A
-      7: A#
+      7: Bb
       9: D
 
   CmM7: # minor 3rd + major 7th
     root: C
     tones:
       1: C
-      3: D#
+      3: Eb
       5: G
       7: B
 
@@ -197,7 +197,7 @@ chords:
     root: C
     tones:
       1: C
-      3: D#
+      3: Eb
       5: G
       7: B
 
@@ -214,8 +214,8 @@ chords:
     tones:
       1: C
       3: E
-      5: G#
-      7: A#
+      5: Ab
+      7: Bb
 
   C nondominant 7:
     root: C
@@ -282,9 +282,9 @@ chords:
     root: C
     tones:
       1: C
-      3: D#
+      3: Eb
       5: G
-      7: A#
+      7: Bb
       9: D
       11: F
 
@@ -332,7 +332,7 @@ chords:
     root: C
     tones:
       1: C
-      3: D#
+      3: Eb
       5: G
       13: A
 
@@ -340,9 +340,9 @@ chords:
     root: C
     tones:
       1: C
-      3: D#
+      3: Eb
       5: G
-      7: A#
+      7: Bb
       9: D
       11: F
       13: A

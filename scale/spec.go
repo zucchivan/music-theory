@@ -1,11 +1,11 @@
-// Chords are expressed in readable strings, e.g. CMb5b7 or Cm679-5
-package chord
+// Scales are expressed in readable strings, e.g. CMb5b7 or Cm679-5
+package scale
 
 import (
 	"gopkg.in/yaml.v2"
 )
 
-func (c Chord) ToYAML() string {
+func (c Scale) ToYAML() string {
 	spec := specFrom(c)
 	out, _ := yaml.Marshal(spec)
 	return string(out[:])
@@ -15,8 +15,8 @@ func (c Chord) ToYAML() string {
  *
  private */
 
-func specFrom(c Chord) specChord {
-	s := specChord{}
+func specFrom(c Scale) specScale {
+	s := specScale{}
 	s.Root = c.Root.String(c.AdjSymbol)
 	s.Tones = make(map[int]string)
 	for i, t := range c.Tones {
@@ -25,7 +25,7 @@ func specFrom(c Chord) specChord {
 	return s
 }
 
-type specChord struct {
+type specScale struct {
 	Root  string
 	Tones map[int]string
 }

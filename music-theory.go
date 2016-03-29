@@ -126,7 +126,7 @@ func main() {
 	app.EnableBashCompletion = true
 	app.Name = "music-theory"
 	app.Usage = "Notes, Keys, Chords and Scales"
-	app.Version = "0.0.2"
+	app.Version = "0.0.3"
 	app.Authors = []cli.Author{cli.Author{Name: "Charney Kaye", Email: "hiya@charney.io"}}
 	app.Commands = commands
 	app.Run(os.Args)

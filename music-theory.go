@@ -80,7 +80,6 @@ import (
 	"os"
 
 	"github.com/codegangsta/cli"
-	"gopkg.in/yaml.v2"
 
 	"github.com/go-music-theory/music-theory/chord"
 	"github.com/go-music-theory/music-theory/key"
@@ -120,8 +119,7 @@ var commands = []cli.Command{
 		Usage:       "list all known Chords",
 		Description: "The Chord DNA is this software is a sequential chain of rules to be executed by matching text in the chord name to its musical implications from the root of the chord.",
 		Action: func(c *cli.Context) {
-			out, _ := yaml.Marshal(chord.ListAllForms())
-			fmt.Printf("%s", string(out[:]))
+			fmt.Printf("%s", chord.ChordFormList.ToYAML())
 		},
 	},
 
@@ -133,8 +131,7 @@ var commands = []cli.Command{
 		Action: func(c *cli.Context) {
 			name := c.Args().First()
 			if len(name) > 0 {
-				out, _ := yaml.Marshal(key.Of(name))
-				fmt.Printf("%s", string(out[:]))
+				fmt.Printf("%s", key.Of(name).ToYAML())
 			} else {
 				// no arguments
 				cli.ShowCommandHelp(c, "key")

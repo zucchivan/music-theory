@@ -14,7 +14,7 @@ To build and install `music-theory` to your machine:
 
     make install
 
-Then, to calculate the note pitch classes for a specified Chord:
+Then, to calculate the note pitch classes for a specified **Chord**:
 
     $ music-theory chord "Cm nondominant -5 679"
     
@@ -25,7 +25,7 @@ Then, to calculate the note pitch classes for a specified Chord:
       7: A#
       9: D
 
-To list the names of all the known chord-building rules, run `bin/chord ?`:
+To list the names of all the known chord-building rules:
 
     $ music-theory chords
     
@@ -67,6 +67,40 @@ To list the names of all the known chord-building rules, run `bin/chord ?`:
     - Dominant Thirteenth
     - Major Thirteenth
     - Minor Thirteenth
+
+To calculate the note pitch classes for a specified **Scale**:
+
+    $ music-theory scale "C aug"
+    
+    root: C
+    tones:
+      1: C
+      2: D#
+      3: E
+      4: G
+      5: G#
+      6: B
+
+To list the names of all the known scale-building rules:
+
+    $ music-theory scales
+    
+    - Default (Major)
+    - Minor
+    - Major
+    - Natural Minor
+    - Diminished
+    - Augmented
+    - Melodic Minor Ascend
+    - Melodic Minor Descend
+    - Harmonic Minor
+    - Ionian
+    - Dorian
+    - Phrygian
+    - Lydian
+    - Mixolydian
+    - Aeolian
+    - Locrian
 
 To determine a key:
 

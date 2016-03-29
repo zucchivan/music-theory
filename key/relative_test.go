@@ -10,11 +10,11 @@ import (
 func TestRelativeMajor(t *testing.T) {
 	k := Of("A minor")
 	expectRk := Of("C major")
-	assert.Equal(t, k.RelativeMajor(), expectRk)
+	assert.Equal(t, expectRk, k.RelativeMajor())
 }
 
 func TestRelativeMinor(t *testing.T) {
 	k := Of("C major")
 	expectRk := Of("A minor")
-	assert.Equal(t, k.RelativeMinor(), expectRk)
+	assert.Equal(t, expectRk, k.RelativeMinor())
 }

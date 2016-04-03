@@ -126,6 +126,12 @@ The key of a piece is a group of pitches, or scale upon which a music compositio
 
 ## Chord
 
-A chord, in music, is any harmonic set of three or more notes that is heard as if sounding simultaneously.
+In music theory, a chord is any harmonic set of three or more notes that is heard as if sounding simultaneously.
 
 [![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory/chord?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory/chord) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music-theory/music-theory/chord)
+
+## Scale
+
+In music theory, a scale is any set of musical notes ordered by fundamental frequency or pitch. A scale ordered by increasing pitch is an ascending scale, and a scale ordered by decreasing pitch is a descending scale. Some scales contain different pitches when ascending than when descending. For example, the Melodic minor scale.
+
+[![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory/scale?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory/scale) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music-theory/music-theory/scale)

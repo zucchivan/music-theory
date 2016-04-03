@@ -1,12 +1,8 @@
 [![Build Status](https://travis-ci.org/go-music-theory/music-theory.svg?branch=master)](https://travis-ci.org/go-music-theory/music-theory) [![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory) [![Go Report Card](https://goreportcard.com/badge/github.com/go-music-theory/music-theory)](https://goreportcard.com/report/github.com/go-music-theory/music-theory) [![codebeat badge](https://codebeat.co/badges/2636c257-5ea9-47dd-8194-871e29178c46)](https://codebeat.co/projects/github-com-go-music-theory-music-theory)
 
-# Music Theory
+[https://github.com/go-music-theory/music-theory](github.com/go-music-theory/music-theory)
 
-https://github.com/go-music-theory/music-theory
-
-Author: [Charney Kaye](http://w.charney.io)
-
-#### Music theory models in Go
+## Music theory models in Go
 
 There's an example command-line utility `music-theory.go` to demo the libraries, with a `bin/` wrapper.
 
@@ -135,3 +131,8 @@ In music theory, a chord is any harmonic set of three or more notes that is hear
 In music theory, a scale is any set of musical notes ordered by fundamental frequency or pitch.
 
 [![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory/scale?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory/scale) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music-theory/music-theory/scale)
+
+## Credit
+
+Originally authored by [Charney Kaye](http://w.charney.io)
+

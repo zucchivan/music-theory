@@ -8,4 +8,9 @@ The key of a piece is a group of pitches, or scale upon which a music compositio
 
 [Musical Key on Wikipedia](https://en.wikipedia.org/wiki/Key_(music))
 
-Author: [Charney Kaye](http://w.charney.io)
+##### Credit
+
+[Charney Kaye](http://w.charney.io)
+
+[Outright Mental](http://w.outright.io)
+

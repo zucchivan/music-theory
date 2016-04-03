@@ -108,6 +108,12 @@ To determine a key:
       root: Bb
       mode: Minor
 
+##### Credit
+
+[Charney Kaye](http://w.charney.io)
+
+[Outright Mental](http://w.outright.io)
+
 ## [Note](note/)
 
 A Note is used to represent the relative duration and pitch of a sound.
@@ -131,8 +137,3 @@ In music theory, a chord is any harmonic set of three or more notes that is hear
 In music theory, a scale is any set of musical notes ordered by fundamental frequency or pitch.
 
 [![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory/scale?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory/scale) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music-theory/music-theory/scale)
-
-## Credit
-
-Originally authored by [Charney Kaye](http://w.charney.io)
-

@@ -8,4 +8,9 @@ A chord, in music, is any harmonic set of three or more notes that is heard as i
 
 [Musical Chord on Wikipedia](https://en.wikipedia.org/wiki/Chord_(music))
 
-Author: [Charney Kaye](http://w.charney.io)
+##### Credit
+
+[Charney Kaye](http://w.charney.io)
+
+[Outright Mental](http://w.outright.io)
+

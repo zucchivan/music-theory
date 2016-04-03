@@ -8,5 +8,9 @@ A Note is used to represent the relative duration and pitch of a sound.
 
 [Musical Note on Wikipedia](https://en.wikipedia.org/wiki/Musical_note)
 
-Author: [Charney Kaye](http://w.charney.io)
+##### Credit
+
+[Charney Kaye](http://w.charney.io)
+
+[Outright Mental](http://w.outright.io)
 

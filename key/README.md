@@ -4,8 +4,8 @@
 
 #### A model of a musical key signature.
 
-[Musical Key on Wikipedia](https://en.wikipedia.org/wiki/Key_(music))
-
 The key of a piece is a group of pitches, or scale upon which a music composition is created in classical, Western art, and Western pop music.
+
+[Musical Key on Wikipedia](https://en.wikipedia.org/wiki/Key_(music))
 
 Author: [Charney Kaye](http://w.charney.io)

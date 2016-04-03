@@ -1,4 +1,16 @@
 // A chord, in music, is any harmonic set of three or more notes that is heard as if sounding simultaneously.
+//
+// https://en.wikipedia.org/wiki/Chord_(music)
+//
+// Credit
+//
+// Charney Kaye
+// <hiya@charney.io>
+// http://w.charney.io
+//
+// Outright Mental
+// http://w.outright.io
+//
 package chord
 
 import (

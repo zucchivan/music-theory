@@ -1,4 +1,16 @@
 // The key of a piece is a group of pitches, or scale upon which a music composition is created in classical, Western art, and Western pop music.
+//
+// https://en.wikipedia.org/wiki/Key_(music)
+//
+// Credit
+//
+// Charney Kaye
+// <hiya@charney.io>
+// http://w.charney.io
+//
+// Outright Mental
+// http://w.outright.io
+//
 package key
 
 import (

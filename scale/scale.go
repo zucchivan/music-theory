@@ -1,4 +1,18 @@
-// In music theory, a scale is any set of musical notes ordered by fundamental frequency or pitch. A scale ordered by increasing pitch is an ascending scale, and a scale ordered by decreasing pitch is a descending scale. Some scales contain different pitches when ascending than when descending. For example, the Melodic minor scale.
+// In music theory, a scale is any set of musical notes ordered by fundamental frequency or pitch.
+//
+// https://en.wikipedia.org/wiki/Scale_(music)
+//
+// A scale ordered by increasing pitch is an ascending scale, and a scale ordered by decreasing pitch is a descending scale. Some scales contain different pitches when ascending than when descending. For example, the Melodic minor scale.
+//
+// Credit
+//
+// Charney Kaye
+// <hiya@charney.io>
+// http://w.charney.io
+//
+// Outright Mental
+// http://w.outright.io
+//
 package scale
 
 import (

@@ -1,16 +1,12 @@
 // Notes, Keys, Chords and Scales
 //
-// Author:  Charney Kaye
-//
-// Website:  http://w.charney.io
-//
 // There's an example command-line utility `music-theory.go` to demo the libraries, with a `bin/` wrapper.
 //
-// To build and install `music-theory` to your machine:
+// Build and install `music-theory` to your machine
 //
 //     make install
 //
-// Then, to calculate the note pitch classes for a specified Chord:
+// Determine a Chord
 //
 //     $ music-theory chord "Cm nondominant -5 679"
 //
@@ -21,7 +17,7 @@
 //       7: A#
 //       9: D
 //
-// To list the names of all the known chord-building rules:
+// List known chord-building rules
 //
 //     $ music-theory chords
 //
@@ -64,7 +60,7 @@
 //     - Major Thirteenth
 //     - Minor Thirteenth
 //
-// To calculate the note pitch classes for a specified Scale:
+// Determine a Scale
 //
 //     $ music-theory scale "C aug"
 //
@@ -77,7 +73,7 @@
 //     5: G#
 //     6: B
 //
-// To list the names of all the known scale-building rules:
+// List known scale-building rules
 //
 //     $ music-theory scales
 //
@@ -98,7 +94,7 @@
 //     - Aeolian
 //     - Locrian
 //
-// To determine a key:
+// Determine a key
 //
 //    $ music-theory key Db
 //
@@ -107,6 +103,15 @@
 //    relative:
 //      root: Bb
 //      mode: Minor
+//
+// Credit
+//
+// Charney Kaye
+// <hiya@charney.io>
+// http://w.charney.io
+//
+// Outright Mental
+// http://w.outright.io
 //
 package main
 

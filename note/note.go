@@ -1,4 +1,16 @@
 // A Note is used to represent the relative duration and pitch of a sound.
+//
+// https://en.wikipedia.org/wiki/Musical_note
+//
+// Credit
+//
+// Charney Kaye
+// <hiya@charney.io>
+// http://w.charney.io
+//
+// Outright Mental
+// http://w.outright.io
+//
 package note
 
 // Note models a musical note

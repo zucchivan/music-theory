@@ -4,6 +4,8 @@
 
 #### A model of a musical chord.
 
+[Musical Chord on Wikipedia](https://en.wikipedia.org/wiki/Chord_(music))
+
 A chord, in music, is any harmonic set of three or more notes that is heard as if sounding simultaneously.
 
 Author: [Charney Kaye](http://w.charney.io)

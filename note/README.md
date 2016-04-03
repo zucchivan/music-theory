@@ -4,6 +4,9 @@
 
 #### A model of a musical note.
 
+[Musical Note on Wikipedia](https://en.wikipedia.org/wiki/Musical_note)
+
 A Note is used to represent the relative duration and pitch of a sound.
 
 Author: [Charney Kaye](http://w.charney.io)
+

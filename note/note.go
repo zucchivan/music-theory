@@ -18,10 +18,10 @@ type Note struct {
 	Class  Class  // Class of pitch
 	Octave Octave // Octave #
 
-	Performer string // Can be used to sort out whose Notes are whose
+	Performer string  // Can be used to sort out whose Notes are whose
 	Position  float64 // Can be used to represent time within the composition
 	Duration  float64 // Can be used to represent time of note duration
-	Code      string // Can be used to store any custom values
+	Code      string  // Can be used to store any custom values
 }
 
 // Named note returns a Note model

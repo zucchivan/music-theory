@@ -29,9 +29,9 @@ func TestScaleParseModes(t *testing.T) {
 	}, c.Tones)
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 //func assertEquivalentModes(t *testing.T, expectModes []Mode, actualModes []Mode) {
 //	for _, expectMode := range expectModes {

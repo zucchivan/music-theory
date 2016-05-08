@@ -24,9 +24,9 @@ func (this *Mode) MatchString(s string) bool {
 	return this.matchPosNegString(s)
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 // Regular expression to use mid-word, gluing together mode expression parts
 var nExp = "[. ]*"

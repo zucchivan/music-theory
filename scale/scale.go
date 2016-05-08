@@ -41,9 +41,9 @@ func (this *Scale) Notes() (notes []*note.Note) {
 	return
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 func (this *Scale) parse(name string) {
 	this.Tones = make(map[Interval]note.Class)

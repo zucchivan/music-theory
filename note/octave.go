@@ -15,9 +15,9 @@ func OctaveOf(text string) Octave {
 	return Octave(o)
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 var rgxOctave *regexp.Regexp
 

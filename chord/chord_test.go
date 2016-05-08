@@ -74,9 +74,9 @@ func TestTranspose(t *testing.T) {
 	assert.Equal(t, expectChord, actualChord)
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 type testKey struct {
 	Root  string

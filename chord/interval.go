@@ -27,9 +27,9 @@ const (
 	I16 Interval = 15
 )
 
-/*
- *
- private */
+//
+// Private
+//
 
 // forAllIn the intervals 1-16 of a chord, run the given function.
 func forAllIn(setIntervals map[Interval]note.Class, callback classIteratorFunc) {

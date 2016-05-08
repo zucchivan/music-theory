@@ -35,9 +35,9 @@ func (from Class) String(with AdjSymbol) string {
 	return stringOf(from, with)
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 func stringOf(from Class, with AdjSymbol) string {
 	switch from {

@@ -12,9 +12,9 @@ func TestToYAML(t *testing.T) {
 	testKeySpecYAML(t, "A minor", "root: A\nmode: Minor\nrelative:\n  root: C\n  mode: Major\n")
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 func testKeySpecYAML(t *testing.T, name string, expectOut string) {
 	c := Of(name)

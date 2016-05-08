@@ -59,9 +59,9 @@ func TestStringOf(t *testing.T) {
 	assert.Equal(t, "-", stringOf(Cs, No))
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 func testNameOf(t *testing.T, name string, expectClass Class, expectOctave Octave, expectStringSharp string, expectStringFlat string) {
 	c, o := NameOf(name)

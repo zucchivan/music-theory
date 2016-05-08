@@ -6,9 +6,9 @@ import (
 	"strings"
 )
 
-/*
- *
- private */
+//
+// Private
+//
 
 var (
 	rgxSingle, _ = regexp.Compile("^[ABCDEFG]")

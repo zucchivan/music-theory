@@ -34,9 +34,9 @@ func TestOf_Invalid(t *testing.T) {
 	assert.Equal(t, note.Nil, k.Root)
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 type testKey struct {
 	Root string

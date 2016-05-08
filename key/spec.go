@@ -11,9 +11,9 @@ func (k Key) ToYAML() string {
 	return string(out[:])
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 func specFrom(k Key) specKey {
 	s := specKey{}

@@ -43,9 +43,9 @@ const (
 	Flat
 )
 
-/*
- *
- private */
+//
+// Private
+//
 
 var (
 	rgxSharpIn, _    = regexp.Compile("[♯#]|major")

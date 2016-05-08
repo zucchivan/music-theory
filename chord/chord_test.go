@@ -51,7 +51,7 @@ func TestOf_Invalid(t *testing.T) {
 
 func TestTranspose(t *testing.T) {
 	actualChord := &Chord{
-		Root: note.C,
+		Root:      note.C,
 		AdjSymbol: note.Flat,
 		Tones: map[Interval]note.Class{
 			I3: note.Ds,
@@ -61,7 +61,7 @@ func TestTranspose(t *testing.T) {
 		},
 	}
 	expectChord := &Chord{
-		Root: note.Ds,
+		Root:      note.Ds,
 		AdjSymbol: note.Flat,
 		Tones: map[Interval]note.Class{
 			I3: note.Fs,
@@ -73,7 +73,6 @@ func TestTranspose(t *testing.T) {
 	actualChord.Transpose(3)
 	assert.Equal(t, expectChord, actualChord)
 }
-
 
 /*
  *

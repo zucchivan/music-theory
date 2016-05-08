@@ -48,9 +48,9 @@ func (this *Chord) Transpose(semitones int) {
 	return
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 func (this *Chord) parse(name string) {
 	this.Tones = make(map[Interval]note.Class)

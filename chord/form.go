@@ -25,9 +25,9 @@ func (this *Form) MatchString(s string) bool {
 	return this.matchPosNegString(s)
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 // Regular expression to use mid-word, gluing together form expression parts
 var nExp = "[. ]*"

@@ -11,9 +11,9 @@ func (c Scale) ToYAML() string {
 	return string(out[:])
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 func specFrom(c Scale) specScale {
 	s := specScale{}

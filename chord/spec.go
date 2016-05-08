@@ -11,9 +11,9 @@ func (c Chord) ToYAML() string {
 	return string(out[:])
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 func specFrom(c Chord) specChord {
 	s := specChord{}

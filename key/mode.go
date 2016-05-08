@@ -27,9 +27,9 @@ func (of Mode) String() string {
 	return ""
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 var (
 	rgxMajor, _ = regexp.Compile("^(M|maj|major)")

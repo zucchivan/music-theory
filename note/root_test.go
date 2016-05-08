@@ -15,9 +15,9 @@ func TestRootOf(t *testing.T) {
 	assertRootAndRemaining(t, "JAMS", Nil, "JAMS")
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 func assertRootAndRemaining(t *testing.T, fromChord string, expectRoot Class, expectRemaining string) {
 	root, remaining := RootAndRemaining(fromChord)

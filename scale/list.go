@@ -15,9 +15,9 @@ func (l List) ToYAML() string {
 
 var ScaleModeList List
 
-/*
- *
- private */
+//
+// Private
+//
 
 func init() {
 	for _, f := range modes {

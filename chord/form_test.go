@@ -26,9 +26,9 @@ func TestChordParseForms(t *testing.T) {
 	}, c.Tones)
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 //func assertEquivalentForms(t *testing.T, expectForms []Form, actualForms []Form) {
 //	for _, expectForm := range expectForms {

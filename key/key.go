@@ -31,9 +31,9 @@ type Key struct {
 	Mode      Mode
 }
 
-/*
- *
- private */
+//
+// Private
+//
 
 func (this *Key) parse(name string) {
 	// determine whether the name is "sharps" or "flats"

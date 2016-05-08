@@ -15,9 +15,9 @@ func (l List) ToYAML() string {
 
 var ChordFormList List
 
-/*
- *
- private */
+//
+// Private
+//
 
 func init() {
 	for _, f := range forms {

@@ -21,6 +21,10 @@ func (this Class) Diff(targetPitch Class) int {
 //
 
 func classDiff(from Class, to Class, inc int) int {
+	if from == Nil {
+		panic("Cannot step semitones from Nil pitch class")
+	}
+
 	diff := 0
 	for {
 		if from == to {

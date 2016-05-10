@@ -15,3 +15,11 @@ func TestClass_Diff(t *testing.T) {
 	assert.Equal(t, 4, D.Diff(Fs))
 	assert.Equal(t, -6, F.Diff(B))
 }
+
+func TestClass_Diff_PanicFromNil(t *testing.T) {
+	defer func() {
+		r := recover()
+		assert.NotNil(t, r)
+	}()
+	Nil.Diff(Fs)
+}

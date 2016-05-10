@@ -43,7 +43,7 @@ func (this *Chord) Notes() (notes []*note.Note) {
 func (this Chord) Transpose(semitones int) Chord {
 	transposedChord := Chord{
 		AdjSymbol: this.AdjSymbol,
-		Tones: make(map[Interval]note.Class),
+		Tones:     make(map[Interval]note.Class),
 	}
 	transposedChord.Root, _ = this.Root.Step(semitones)
 	for interval, class := range this.Tones {

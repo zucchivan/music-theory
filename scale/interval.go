@@ -24,7 +24,7 @@ const (
 	I13 Interval = 13
 	I14 Interval = 14
 	I15 Interval = 15
-	I16 Interval = 15
+	I16 Interval = 16
 )
 
 //

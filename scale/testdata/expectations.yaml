@@ -135,6 +135,17 @@ scales:
       6: C
       7: D
 
+  F major:
+    root: F
+    tones:
+      1: F
+      2: G
+      3: A
+      4: Bb
+      5: C
+      6: D
+      7: E
+
   F lydian:
     root: F
     tones:

@@ -1,7 +1,9 @@
 // Note has an adjustment symbol (Sharp or Flat) to render the "accidental notes for a given name (e.g. of a chord, scale or key)
 package note
 
-import "regexp"
+import (
+	"regexp"
+)
 
 // AdjSymbolOf the adjustment symbol (Sharp or Flat) for a given name (e.g. of a chord, scale or key)
 func AdjSymbolOf(name string) AdjSymbol {
@@ -49,7 +51,7 @@ const (
 
 var (
 	rgxSharpIn, _    = regexp.Compile("[♯#]|major")
-	rgxFlatIn, _     = regexp.Compile("[♭b]")
+	rgxFlatIn, _     = regexp.Compile("^F|[♭b]")
 	rgxSharpBegin, _ = regexp.Compile("^[♯#]")
 	rgxFlatBegin, _  = regexp.Compile("^[♭b]")
 	rgxSharpishIn, _ = regexp.Compile("(M|maj|major|aug)")

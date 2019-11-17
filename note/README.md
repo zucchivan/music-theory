@@ -10,7 +10,7 @@ A Note is used to represent the relative duration and pitch of a sound.
 
 ##### Credit
 
-[Charney Kaye](http://w.charney.io)
+[Charney Kaye](https://charneykaye.com)
 
-[Outright Mental](http://w.outright.io)
+[XJ Music](https://xj.io)
 

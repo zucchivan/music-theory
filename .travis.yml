@@ -1,13 +1,11 @@
 language: go
 
 go:
-  - 1.5
-  - 1.6.2
+  - "1.11"
+  - "1.12"
+  - "1.13"
 
 install:
-  - # Testing
-  - go get github.com/stretchr/testify/assert
-  - go get github.com/stretchr/testify/mock
-  - # Logging
-  - go get github.com/Sirupsen/logrus
+  - go get gopkg.in/stretchr/testify.v1/assert
+  - go get gopkg.in/stretchr/testify.v1/mock
 

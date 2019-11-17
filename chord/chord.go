@@ -5,11 +5,11 @@
 // Credit
 //
 // Charney Kaye
-// <hiya@charney.io>
-// http://w.charney.io
+// <hi@charneykaye.com>
+// https://charneykaye.com
 //
-// Outright Mental
-// http://w.outright.io
+// XJ Music
+// https://xj.io
 //
 package chord
 

@@ -14,7 +14,7 @@
 package chord
 
 import (
-	"github.com/go-music-theory/music-theory/note"
+	"gopkg.in/music-theory.v0/note"
 )
 
 // Chord in a particular key

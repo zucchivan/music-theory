@@ -12,6 +12,6 @@ A scale ordered by increasing pitch is an ascending scale, and a scale ordered b
 
 ##### Credit
 
-[Charney Kaye](http://w.charney.io)
+[Charney Kaye](https://charneykaye.com)
 
-[Outright Mental](http://w.outright.io)
+[XJ Music](https://xj.io)

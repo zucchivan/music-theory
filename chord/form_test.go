@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/go-music-theory/music-theory/note"
-	"github.com/stretchr/testify/assert"
+	"gopkg.in/stretchr/testify.v1/assert"
 )
 
 func TestListAllForms(t *testing.T) {

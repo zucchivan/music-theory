@@ -2,15 +2,15 @@
 package chord
 
 import (
-	"testing"
-
-	"github.com/stretchr/testify/assert"
-
 	"fmt"
+	"testing"
+	"io/ioutil"
+
+	"gopkg.in/yaml.v2"
+	"gopkg.in/stretchr/testify.v1/assert"
+
 	"github.com/go-music-theory/music-theory/key"
 	"github.com/go-music-theory/music-theory/note"
-	"gopkg.in/yaml.v2"
-	"io/ioutil"
 )
 
 func TestChordExpectations(t *testing.T) {

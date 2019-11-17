@@ -5,11 +5,11 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"gopkg.in/stretchr/testify.v1/assert"
 	"gopkg.in/yaml.v2"
 
 	"fmt"
-	"github.com/go-music-theory/music-theory/note"
+	"gopkg.in/music-theory.v0/note"
 )
 
 func TestKeys(t *testing.T) {

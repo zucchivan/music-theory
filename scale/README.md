@@ -1,6 +1,6 @@
 # Scale
 
-[![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory/scale?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory/scale) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music-theory/music-theory/scale)
+[![GoDoc](https://godoc.org/gopkg.in/music-theory.v0/scale?status.svg)](https://godoc.org/gopkg.in/music-theory.v0/scale) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/gopkg.in/music-theory.v0/scale)
 
 #### A model of a musical scale.
 
@@ -12,6 +12,6 @@ A scale ordered by increasing pitch is an ascending scale, and a scale ordered b
 
 ##### Credit
 
-[Charney Kaye](http://w.charney.io)
+[Charney Kaye](https://charneykaye.com)
 
-[Outright Mental](http://w.outright.io)
+[XJ Music](https://xj.io)

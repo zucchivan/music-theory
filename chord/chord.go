@@ -5,16 +5,16 @@
 // Credit
 //
 // Charney Kaye
-// <hiya@charney.io>
-// http://w.charney.io
+// <hi@charneykaye.com>
+// https://charneykaye.com
 //
-// Outright Mental
-// http://w.outright.io
+// XJ Music
+// https://xj.io
 //
 package chord
 
 import (
-	"github.com/go-music-theory/music-theory/note"
+	"gopkg.in/music-theory.v0/note"
 )
 
 // Chord in a particular key

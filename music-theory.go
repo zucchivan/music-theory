@@ -107,11 +107,11 @@
 // Credit
 //
 // Charney Kaye
-// <hiya@charney.io>
-// http://w.charney.io
+// <hi@charneykaye.com>
+// https://charneykaye.com
 //
-// Outright Mental
-// http://w.outright.io
+// XJ Music
+// https://xj.io
 //
 package main
 
@@ -119,7 +119,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/codegangsta/cli"
+	"gopkg.in/urfave/cli.v1"
 
 	"github.com/go-music-theory/music-theory/chord"
 	"github.com/go-music-theory/music-theory/key"
@@ -132,8 +132,8 @@ func main() {
 	app.EnableBashCompletion = true
 	app.Name = "music-theory"
 	app.Usage = "Notes, Keys, Chords and Scales"
-	app.Version = "0.0.3"
-	app.Authors = []cli.Author{cli.Author{Name: "Charney Kaye", Email: "hiya@charney.io"}}
+	app.Version = "0.0.4"
+	app.Authors = []cli.Author{cli.Author{Name: "Charney Kaye", Email: "hi@charneykaye.com"}}
 	app.Commands = commands
 	app.Run(os.Args)
 }

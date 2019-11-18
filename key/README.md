@@ -1,6 +1,6 @@
 # Key
 
-[![GoDoc](https://godoc.org/github.com/go-music-theory/music-theory/key?status.svg)](https://godoc.org/github.com/go-music-theory/music-theory/key) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/github.com/go-music-theory/music-theory/key)
+[![GoDoc](https://godoc.org/gopkg.in/music-theory.v0/key?status.svg)](https://godoc.org/gopkg.in/music-theory.v0/key) [![Coverage](https://img.shields.io/badge/coverage-100%-brightgreen.svg?style=flat)](https://gocover.io/gopkg.in/music-theory.v0/key)
 
 #### A model of a musical key signature.
 
@@ -10,7 +10,7 @@ The key of a piece is a group of pitches, or scale upon which a music compositio
 
 ##### Credit
 
-[Charney Kaye](http://w.charney.io)
+[Charney Kaye](https://charneykaye.com)
 
-[Outright Mental](http://w.outright.io)
+[XJ Music](https://xj.io)
 

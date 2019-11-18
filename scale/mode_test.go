@@ -4,8 +4,8 @@ package scale
 import (
 	"testing"
 
-	"github.com/go-music-theory/music-theory/note"
-	"github.com/stretchr/testify/assert"
+	"gopkg.in/music-theory.v0/note"
+	"gopkg.in/stretchr/testify.v1/assert"
 )
 
 func TestListAllModes(t *testing.T) {

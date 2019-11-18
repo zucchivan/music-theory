@@ -35,5 +35,5 @@ install: all
 		sudo install -m 0755 $(TARGET_DIR)/$$app.$(OS).$(ARCH) $(INSTALL_PREFIX)/bin/$$app; done \
 
 deps:
-	go get -v ./...
+	go get -v -t ./...
 	mkdir -p $(TARGET_DIR)

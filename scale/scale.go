@@ -7,16 +7,16 @@
 // Credit
 //
 // Charney Kaye
-// <hiya@charney.io>
-// http://w.charney.io
+// <hi@charneykaye.com>
+// https://charneykaye.com
 //
-// Outright Mental
-// http://w.outright.io
+// XJ Music
+// https://xj.io
 //
 package scale
 
 import (
-	"github.com/go-music-theory/music-theory/note"
+	"gopkg.in/music-theory.v0/note"
 )
 
 // Scale in a particular key

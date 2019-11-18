@@ -4,11 +4,11 @@ package scale
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"gopkg.in/stretchr/testify.v1/assert"
 
 	"fmt"
-	"github.com/go-music-theory/music-theory/key"
-	"github.com/go-music-theory/music-theory/note"
+	"gopkg.in/music-theory.v0/key"
+	"gopkg.in/music-theory.v0/note"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 )

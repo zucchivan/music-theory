@@ -121,9 +121,10 @@ import (
 
 	"gopkg.in/urfave/cli.v1"
 
-	"gopkg.in/music-theory.v0/chord"
-	"gopkg.in/music-theory.v0/key"
-	"gopkg.in/music-theory.v0/scale"
+	"github.com/go-music-theory/music-theory/chord"
+	"github.com/go-music-theory/music-theory/key"
+	"github.com/go-music-theory/music-theory/scale"
+	"github.com/go-music-theory/music-theory/pitch"
 )
 
 func main() {
@@ -201,6 +202,27 @@ var commands = []cli.Command{
 			} else {
 				// no arguments
 				cli.ShowCommandHelp(c, "key")
+			}
+		},
+	},
+
+	{ // Find a Key
+		Name:        "pitch",
+		Aliases:     []string{"p"},
+		Usage:       "find a note pitch in Hz",
+		Description: "The pitch is note frequency described in Hz. Based on standard conert pitch and twelve-tone equal temperament. As an argument, pass a note in international pitch notation.",
+		Action: func(c *cli.Context) {
+			name := c.Args().First()
+			octave := c.Args().Get(1)
+			if len(name) > 0 {
+				notePitch, err := pitch.Of(name, octave)
+				if err != nil {
+					fmt.Printf("Error occured: %v\n", err)
+				}
+				fmt.Printf("%v\n", notePitch)
+			} else {
+				// no arguments
+				cli.ShowCommandHelp(c, "pitch")
 			}
 		},
 	},

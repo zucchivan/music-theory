@@ -2,28 +2,38 @@ package pitch
 
 import (
 	"testing"
-	"github.com/stretchr/testify/assert"
-	// "github.com/go-music-theory/music-theory/pitch"
+
+	"gopkg.in/stretchr/testify.v1/assert"
 )
 
 // table with proper values can be found here https://en.wikipedia.org/wiki/Scientific_pitch_notation
-func TestDifferentPitches(t *testing.T) {
-	v, _ := Of("A", "4")
-	assert.Equal(t, "440.00Hz", v)
 
-	v2, _ := Of("C", "1")
-	assert.Equal(t, "32.70Hz", v2)
-
-	v3, _ := Of("Gb", "2")
-	assert.Equal(t, "92.50Hz", v3)
-
-	v4, _ := Of("D♯", "6")
-	assert.Equal(t, "1244.51Hz", v4)
-
-	v5, _ := Of("B", "10")
-	assert.Equal(t, "31608.53Hz", v5)
-
-	v6, _ := Of("C", "-1")
-	assert.Equal(t, "8.18Hz", v6)
+func TestOfClassAndOctave(t *testing.T) {
+	assertPitchOfClassAndOctave(t, "440.00Hz", "A", "4")
+	assertPitchOfClassAndOctave(t, "32.70Hz", "C", "1")
+	assertPitchOfClassAndOctave(t, "92.50Hz", "Gb", "2")
+	assertPitchOfClassAndOctave(t, "1244.51Hz", "D♯", "6")
+	assertPitchOfClassAndOctave(t, "31608.53Hz", "B", "10")
+	assertPitchOfClassAndOctave(t, "8.18Hz", "C", "-1")
 }
-	
+
+func TestOfNote(t *testing.T) {
+	assertPitchOfNote(t, "440.00Hz", "A4")
+	assertPitchOfNote(t, "32.70Hz", "C1")
+	assertPitchOfNote(t, "92.50Hz", "Gb2")
+	assertPitchOfNote(t, "1244.51Hz", "D#6")
+	assertPitchOfNote(t, "31608.53Hz", "B10")
+	assertPitchOfNote(t, "8.18Hz", "C-1")
+}
+
+func assertPitchOfClassAndOctave(t *testing.T, expected string, class string, octave string) {
+	actual, err := OfClassAndOctave(class, octave)
+	assert.Nil(t, err)
+	assert.Equal(t, expected, actual)
+}
+
+func assertPitchOfNote(t *testing.T, expected string, name string) {
+	actual, err := OfNote(name)
+	assert.Nil(t, err)
+	assert.Equal(t, expected, actual)
+}

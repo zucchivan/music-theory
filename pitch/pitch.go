@@ -1,44 +1,55 @@
 package pitch
 
 import (
-	"github.com/go-music-theory/music-theory/note"
-	"strconv"
 	"math"
+	"strconv"
+
+	"github.com/go-music-theory/music-theory/note"
 )
 
-var A_4_PITCH = 440
-var A_4_NO = 58 // step no from C0
+var A4Pitch = 440
+var A4Num = 58 // step no from C0
 
-func Of(name string, octave string) (string, error) {
-	root, name := note.RootAndRemaining(name)
-	octaveNo, err := calcOctave(octave)
+func OfNote(name string) (string, error) {
+	class := note.ClassNamed(name)
+	octave := note.OctaveOf(name)
+	return format(calcPitch(class, int(octave)))
+}
+
+func OfClassAndOctave(class string, octaveStr string) (string, error) {
+	root, class := note.RootAndRemaining(class)
+
+	octave, err := strconv.Atoi(octaveStr)
 	if err != nil {
-		return "", err
+		return format(-1, err)
 	}
 
-	pitch := calcPitch(root, octaveNo)
-	return strconv.FormatFloat(pitch, 'f', 2, 64) + "Hz", nil
+	return format(calcPitch(root, octave))
 }
 
-func calcPitch(note note.Class, octave int) float64 {
-	stepNo := int(note) + octave * 12
-	diffFromA4 := abs(A_4_NO - stepNo)
-	magnitude := math.Pow(math.Pow(2, 1.0 / 12), float64(diffFromA4))
+func calcPitch(note note.Class, octave int) (float64, error) {
 
-	if stepNo < A_4_NO {
-		return round(float64(A_4_PITCH) / magnitude)
+	stepNo := int(note) + octave*12
+	diffFromA4 := abs(A4Num - stepNo)
+	magnitude := math.Pow(math.Pow(2, 1.0/12), float64(diffFromA4))
+
+	if stepNo < A4Num {
+		return round(float64(A4Pitch) / magnitude), nil
 	} else {
-		return round(float64(A_4_PITCH) * magnitude)
+		return round(float64(A4Pitch) * magnitude), nil
 	}
 }
 
+func format(pitch float64, err error) (string, error) {
+	if err == nil {
+		return strconv.FormatFloat(pitch, 'f', 2, 64) + "Hz", nil
+	} else {
+		return "n/a", err
+	}
+}
 
 func round(pitch float64) float64 {
 	return math.Round(pitch*100) / 100
-}
-
-func calcOctave(octave string) (int, error) {
-	return strconv.Atoi(octave)
 }
 
 func abs(number int) int {
@@ -48,4 +59,3 @@ func abs(number int) int {
 
 	return number
 }
-

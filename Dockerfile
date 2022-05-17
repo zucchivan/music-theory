@@ -8,4 +8,4 @@ RUN go mod download
 
 COPY *.go ./
 
-RUN make install
+ENTRYPOINT ["music-theory"]
